@@ -1,4 +1,3 @@
-import csv
 import subprocess
 import sys
 import time
@@ -17,10 +16,9 @@ class GPTOSSPromptSender:
         self.stop_reading = False
         
         # Drei kleine Test-Prompts (statt der langen Hochwasserschutz-Templates)
-      
-self.prompts = [
-    """# PROMPT 1: INTERNE RECHERCHE (ALLGEMEIN)
-    
+        self.prompts = [
+            """# PROMPT 1: INTERNE RECHERCHE (ALLGEMEIN)
+            
 Führe eine interne Recherche durch und beantworte:
 - Was ist die Hauptstadt von {land}?  
 
@@ -28,8 +26,8 @@ Führe eine interne Recherche durch und beantworte:
 Schreibe nur den Stadtnamen, sonst nichts.
 """,
 
-    """# PROMPT 2: INTERNE RECHERCHE (EINFACH)
-    
+            """# PROMPT 2: INTERNE RECHERCHE (EINFACH)
+            
 Führe eine interne Recherche durch und beantworte:
 - Welche Sprache wird in {land} hauptsächlich gesprochen?  
 
@@ -37,17 +35,16 @@ Führe eine interne Recherche durch und beantworte:
 Nur die Sprache nennen.
 """,
 
-    """# PROMPT 3: INTERNE RECHERCHE (KURZ)
-    
+            """# PROMPT 3: INTERNE RECHERCHE (KURZ)
+            
 Führe eine interne Recherche durch und beantworte:
 - Nenne die ungefähre Einwohnerzahl von {gemeinde}.  
 
 ## AUSGABEFORMAT
 Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
 """
-]
+        ]
 
-    
     def start_gpt_process(self):
         """Startet den GPT-OSS Prozess einmalig"""
         cmd = [
@@ -83,7 +80,6 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
         """Liest kontinuierlich Output vom Prozess"""
         try:
             while not self.stop_reading and self.process.poll() is None:
-                # Verwende select für non-blocking read (Unix/Linux/Mac)
                 if hasattr(select, 'select'):
                     ready, _, _ = select.select([self.process.stdout], [], [], 0.1)
                     if ready:
@@ -91,7 +87,6 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
                         if line:
                             self.output_queue.put(line)
                 else:
-                    # Fallback für Windows
                     try:
                         line = self.process.stdout.readline()
                         if line:
@@ -104,25 +99,17 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
     
     def _wait_for_ready(self):
         """Wartet bis das System bereit ist"""
-        ready_indicators = [
-            "User:",
-            "System Message:",
-            "Model Identity:",
-        ]
-        
-        timeout = 30  # 30 Sekunden timeout
+        ready_indicators = ["User:", "System Message:", "Model Identity:"]
+        timeout = 30
         start_time = time.time()
         
         while time.time() - start_time < timeout:
             try:
                 line = self.output_queue.get(timeout=1)
                 print(f"Init: {line.strip()}")
-                
-                # Suche nach Bereitschaftsindikatoren
                 if any(indicator in line for indicator in ready_indicators):
                     print("System ist bereit!")
                     return True
-                    
             except queue.Empty:
                 continue
         
@@ -136,17 +123,11 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
             
         try:
             print(f"\n=== Sende Prompt {prompt_num} für Zeile {row_num} ===")
-            
-            # Prompt senden
             self.process.stdin.write(prompt + "\n")
             self.process.stdin.flush()
-            
-            # Warte auf Antwort
             response = self._collect_response()
-            
             print(f"Antwort erhalten für Zeile {row_num}, Prompt {prompt_num}")
             return response
-            
         except Exception as e:
             print(f"Fehler beim Senden des Prompts: {e}")
             return f"FEHLER: {e}"
@@ -156,40 +137,26 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
         response_lines = []
         assistant_started = False
         response_complete = False
-        
-        timeout = 180  # 3 Minuten timeout für Antwort
+        timeout = 180
         start_time = time.time()
         
         while not response_complete and time.time() - start_time < timeout:
             try:
                 line = self.output_queue.get(timeout=2)
-                
-                # Debug output
                 print(f"[DEBUG] {line.strip()}")
-                
-                # Suche nach dem Beginn der Assistant-Antwort
                 if "Assistant:" in line:
                     assistant_started = True
                     continue
-                
-                # Wenn Assistant gestartet hat, sammle Antwort
                 if assistant_started:
-                    # Prüfe auf Ende der Antwort
                     if self._is_response_complete(line, response_lines):
                         response_complete = True
                         break
-                        
-                    # Prüfe auf neue User-Eingabe (bedeutet Antwort ist fertig)
                     if "User:" in line:
                         response_complete = True
                         break
-                        
-                    # Sammle Antwortzeilen
                     response_lines.append(line.rstrip())
-                
             except queue.Empty:
                 if assistant_started and response_lines:
-                    # Möglicherweise ist die Antwort fertig
                     response_complete = True
                     break
                 continue
@@ -200,63 +167,23 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
         return "\n".join(response_lines)
     
     def _is_response_complete(self, line: str, response_lines: List[str]) -> bool:
-        """Prüft ob die Antwort vollständig ist"""
-        # Sammle alle bisherigen Antwortzeilen
         full_response = "\n".join(response_lines + [line])
-        
-        # Prüfe auf explizite Ende-Marker
-        end_markers = [
-            "NICHTS GEFUNDEN",
-            "etc...",
-            "User:",
-            "\x1b[91mUser:",  # Colored "User:" prompt
-        ]
-        
-        for marker in end_markers:
-            if marker in line or marker in full_response:
-                return True
-        
-        return False
+        end_markers = ["NICHTS GEFUNDEN", "etc...", "User:", "\x1b[91mUser:"]
+        return any(marker in line or marker in full_response for marker in end_markers)
     
-    def read_csv_data(self, csv_file: str) -> List[Dict]:
-        """Liest die CSV-Daten"""
-        data = []
-        
-        with open(csv_file, 'r', encoding='utf-8') as file:
-            reader = csv.reader(file)
-            rows = list(reader)
-            
-            # Zeilen 4-20 (Index 3-19)
-            for i in range(3, min(20, len(rows))):
-                row = rows[i]
-                if len(row) > 8:  # Stelle sicher dass alle Spalten existieren
-                    data.append({
-                        'row_num': i + 1,
-                        'land': row[0].strip(),          # Spalte A
-                        'textkennzeichen': row[4].strip(), # Spalte E  
-                        'gemeinde': row[7].strip(),      # Spalte H
-                        'verwaltungssitz': row[8].strip() # Spalte I
-                    })
-        
-        return data
-    
-    def process_all_data(self, csv_file: str, output_file: str = "results.txt"):
+    def process_all_data(self, output_file: str = "results.txt"):
         """Hauptfunktion die alles verarbeitet"""
         try:
-            # CSV Daten lesen
-            data = self.read_csv_data(csv_file)
-            print(f"Gefundene {len(data)} Zeilen zum Verarbeiten")
+            # Dummy-Testdaten statt CSV
+            data = [
+                {'row_num': 1, 'land': 'Deutschland', 'textkennzeichen': 'TK1', 'gemeinde': 'Berlin', 'verwaltungssitz': 'Berlin'},
+                {'row_num': 2, 'land': 'Frankreich', 'textkennzeichen': 'TK2', 'gemeinde': 'Paris', 'verwaltungssitz': 'Paris'}
+            ]
+            print(f"Verarbeite {len(data)} Test-Datensätze")
             
-            if not data:
-                print("Keine Daten in CSV gefunden!")
-                return
-            
-            # GPT Prozess starten
             self.start_gpt_process()
-            
             results = []
             
-            # Für jede Zeile alle 3 Prompts ausführen
             for row_data in data:
                 print(f"\n{'='*60}")
                 print(f"Verarbeite Zeile {row_data['row_num']}")
@@ -270,21 +197,19 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
                     'responses': []
                 }
                 
-                # Alle 3 Prompts für diese Zeile
                 for prompt_num, prompt_template in enumerate(self.prompts, 1):
-                    # Hier keine .format() nötig, Prompts sind statisch
-                    response = self.send_prompt(prompt_template, row_data['row_num'], prompt_num)
+                    response = self.send_prompt(
+                        prompt_template.format(**row_data),
+                        row_data['row_num'],
+                        prompt_num
+                    )
                     row_results['responses'].append({
                         'prompt_num': prompt_num,
                         'response': response
                     })
-                    
-                    # Kurze Pause zwischen Prompts
                     time.sleep(1)
                 
                 results.append(row_results)
-                
-                # Speichere Zwischenergebnisse
                 self.save_results(results, output_file)
             
             print(f"\nAlle Ergebnisse gespeichert in: {output_file}")
@@ -297,7 +222,6 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
             self.cleanup()
     
     def cleanup(self):
-        """Bereinigt Ressourcen"""
         self.stop_reading = True
         if self.process:
             try:
@@ -308,11 +232,9 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
             print("GPT Prozess beendet")
     
     def save_results(self, results: List[Dict], output_file: str):
-        """Speichert die Ergebnisse in eine Datei"""
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write(f"Ergebnisse der Test-Prompts - {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write("="*80 + "\n\n")
-            
             for result in results:
                 f.write(f"ZEILE {result['row_num']}\n")
                 f.write("-" * 40 + "\n")
@@ -320,30 +242,19 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
                 f.write(f"Land: {result['data']['land']}\n")
                 f.write(f"Textkennzeichen: {result['data']['textkennzeichen']}\n")
                 f.write(f"Verwaltungssitz: {result['data']['verwaltungssitz']}\n\n")
-                
                 for response in result['responses']:
                     f.write(f"PROMPT {response['prompt_num']}\n")
                     f.write("-" * 20 + "\n")
                     f.write(f"{response['response']}\n\n")
-                
                 f.write("=" * 80 + "\n\n")
 
 
 def main():
-    # Konfiguration
-    csv_file = "Data.csv"
     model_path = "gpt-oss-120b/original/"
     output_file = "email_search_results.txt"
-    
-    # Prüfe ob CSV existiert
-    if not os.path.exists(csv_file):
-        print(f"CSV Datei '{csv_file}' nicht gefunden!")
-        return
-    
-    # Sender erstellen und ausführen
     sender = GPTOSSPromptSender(model_path)
     try:
-        sender.process_all_data(csv_file, output_file)
+        sender.process_all_data(output_file)
     except KeyboardInterrupt:
         print("\nAbgebrochen durch Benutzer")
         sender.cleanup()
