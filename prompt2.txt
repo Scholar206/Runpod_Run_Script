@@ -1,7 +1,67 @@
-"""# PROMPT 2: INTERNE RECHERCHE (EINFACH)
-    
-Führe eine interne Recherche durch und beantworte:
-- Welche Sprache wird in Deutschland hauptsächlich gesprochen?  
+# PROMPT 2: E-MAIL & KONTAKTSUCHE (UMWELTAMT & WASSERBEHÖRDE)
+
+## HAUPTAUFGABE
+Finde direkte E-Mail-Adressen von zuständigen Personen/Behörden für Hochwasserschutz und Starkregenprävention am folgenden Standort:
+
+**Standortdaten:**
+- Land: {{A}}
+- Textkennzeichen: {{E}}
+- Gemeinde/Stadt: {{H}}
+- Verwaltungssitz: {{I}}
+
+## SPEZIFISCHE SUCHANFRAGEN (in dieser Reihenfolge durchführen):
+
+### Suchanfrage 1: Wasserbehörde Hochwasserschutz Ansprechpartner
+```
+"{{H}}" Wasserbehörde Hochwasserschutz Ansprechpartner Email
+```
+
+### Suchanfrage 2: Wasserbehörde Starkregenprävention Zuständiger
+```
+"{{H}}" Wasserbehörde Starkregenprävention zuständig Email Kontakt
+```
+
+### Suchanfrage 3: Wasserbehörde Sachbearbeiter Wasserwirtschaft
+```
+"{{H}}" Wasserbehörde Sachbearbeiter Wasserwirtschaft Hochwasser Email
+```
+
+### Suchanfrage 4: Umweltamt Hochwasserschutz Ansprechpartner
+```
+"{{H}}" Umweltamt Hochwasserschutz Ansprechpartner "Planen Umwelt" Email
+```
+
+### Suchanfrage 5: Umweltamt Starkregen Zuständiger
+```
+"{{H}}" Umweltamt Starkregen zuständig Sachbearbeiter Email
+```
+
+### Suchanfrage 6: Umweltamt Wasserwirtschaft Fachbereich
+```
+"{{H}}" Umweltamt Wasserwirtschaft Fachbereich Ansprechpartner Email
+```
 
 ## AUSGABEFORMAT
-Nur die Sprache nennen.
+Gib als Antwort nur dieses Format, sonst nichts:
+
+**Wenn du nichts findest:**
+```
+NICHTS GEFUNDEN
+```
+
+**Wenn du E-Mails findest:**
+```
+email1@example.de
+[Name Vorname] - [Funktion]
+[Quelle-URL]
+
+email2@example.de  
+[Name Vorname] - [Funktion]
+[Quelle-URL]
+
+email3@example.de
+[Name Vorname] - [Funktion] 
+[Quelle-URL]
+
+etc...
+```

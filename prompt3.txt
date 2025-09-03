@@ -1,4 +1,67 @@
- """# PROMPT 3: INTERNE RECHERCHE (KURZ)
-    
-Führe eine interne Recherche durch und beantworte:
-- Nenne die ungefähre Einwohnerzahl von Darmstadt.  
+# PROMPT 3: E-MAIL & KONTAKTSUCHE (FEUERWEHR & DEICHAMT)
+
+## HAUPTAUFGABE
+Finde direkte E-Mail-Adressen von zuständigen Personen/Behörden für Hochwasserschutz und Starkregenprävention am folgenden Standort:
+
+**Standortdaten:**
+- Land: {{A}}
+- Textkennzeichen: {{E}}
+- Gemeinde/Stadt: {{H}}
+- Verwaltungssitz: {{I}}
+
+## SPEZIFISCHE SUCHANFRAGEN (in dieser Reihenfolge durchführen):
+
+### Suchanfrage 1: Feuerwehr Katastrophenprävention Verantwortlicher
+```
+"{{H}}" Feuerwehr verantwortlich Katastrophenprävention Ansprechpartner Email
+```
+
+### Suchanfrage 2: Feuerwehr Hochwasserschutz Zuständiger
+```
+"{{H}}" Feuerwehr Hochwasserschutz zuständig Sachbearbeiter Email
+```
+
+### Suchanfrage 3: Feuerwehr Starkregen Einsatzleiter
+```
+"{{H}}" Feuerwehr Starkregen Einsatzleiter Ansprechpartner Email
+```
+
+### Suchanfrage 4: Deichamt Hochwasserschutz Ansprechpartner
+```
+"{{H}}" Deichamt Hochwasserschutz Ansprechpartner Email
+```
+
+### Suchanfrage 5: Deichamt Deichmeister Zuständiger
+```
+"{{H}}" Deichamt Deichmeister zuständig Sachbearbeiter Email
+```
+
+### Suchanfrage 6: Deichamt Wasserschutz Fachbereich
+```
+"{{H}}" Deichamt Wasserschutz Fachbereich Ansprechpartner Email
+```
+
+## AUSGABEFORMAT
+Gib als Antwort nur dieses Format, sonst nichts:
+
+**Wenn du nichts findest:**
+```
+NICHTS GEFUNDEN
+```
+
+**Wenn du E-Mails findest:**
+```
+email1@example.de
+[Name Vorname] - [Funktion]
+[Quelle-URL]
+
+email2@example.de  
+[Name Vorname] - [Funktion]
+[Quelle-URL]
+
+email3@example.de
+[Name Vorname] - [Funktion] 
+[Quelle-URL]
+
+etc...
+```

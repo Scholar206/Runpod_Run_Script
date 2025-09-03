@@ -50,35 +50,106 @@ def create_system_message(args, browser_tool=None):
     return Message.from_role_and_content(Role.SYSTEM, system_message_content)
 
 
-def read_csv_data(csv_file):
-    """Read CSV file and extract data from rows 4-20"""
-    csv_data = []
+def detect_encoding(file_path):
+    """Detect the encoding of a file"""
+    import chardet
     
     try:
-        with open(csv_file, 'r', encoding='utf-8') as f:
-            reader = csv.reader(f)
-            all_rows = list(reader)
-            
-            # Process rows 4-20 (index 3-19 in 0-based indexing)
-            for i in range(3, min(20, len(all_rows))):
-                row = all_rows[i]
-                if len(row) >= 9:  # Ensure we have columns A through I
-                    csv_data.append({
-                        'A': row[0],  # Bundesland
-                        'E': row[4],  # Textkennzeichen
-                        'H': row[7],  # Gemeinde/Stadt
-                        'I': row[8]   # Verwaltungssitz
-                    })
-                else:
-                    print(f"Warning: Row {i+1} doesn't have enough columns, skipping...")
-                    
+        with open(file_path, 'rb') as f:
+            raw_data = f.read()
+            result = chardet.detect(raw_data)
+            encoding = result['encoding']
+            confidence = result['confidence']
+            print(f"Detected encoding: {encoding} (confidence: {confidence:.2f})")
+            return encoding
+    except Exception as e:
+        print(f"Error detecting encoding: {e}")
+        return 'utf-8'  # fallback
+
+
+def read_csv_data(csv_file):
+    """Read CSV file with automatic encoding detection and extract data from rows 4-20"""
+    csv_data = []
+    
+    # List of encodings to try
+    encodings_to_try = [
+        'utf-8',
+        'utf-8-sig',  # UTF-8 with BOM
+        'iso-8859-1',  # Latin-1
+        'cp1252',      # Windows-1252
+        'cp850',       # DOS encoding
+        'ascii'
+    ]
+    
+    # First try to detect encoding automatically
+    detected_encoding = detect_encoding(csv_file)
+    if detected_encoding and detected_encoding not in encodings_to_try:
+        encodings_to_try.insert(0, detected_encoding)
+    elif detected_encoding:
+        # Move detected encoding to front
+        encodings_to_try.remove(detected_encoding)
+        encodings_to_try.insert(0, detected_encoding)
+    
+    successful_encoding = None
+    
+    for encoding in encodings_to_try:
+        try:
+            print(f"Trying encoding: {encoding}")
+            with open(csv_file, 'r', encoding=encoding) as f:
+                # Try different CSV dialects/delimiters
+                sample = f.read(1024)
+                f.seek(0)
+                
+                # Detect delimiter
+                sniffer = csv.Sniffer()
+                try:
+                    dialect = sniffer.sniff(sample, delimiters=',;\t|')
+                    delimiter = dialect.delimiter
+                    print(f"Detected delimiter: '{delimiter}'")
+                except:
+                    delimiter = ','  # default fallback
+                    print(f"Using default delimiter: ','")
+                
+                # Read the CSV
+                reader = csv.reader(f, delimiter=delimiter)
+                all_rows = list(reader)
+                successful_encoding = encoding
+                print(f"Successfully read CSV with encoding: {encoding}")
+                break
+                
+        except UnicodeDecodeError:
+            print(f"Encoding {encoding} failed with UnicodeDecodeError")
+            continue
+        except Exception as e:
+            print(f"Encoding {encoding} failed with error: {e}")
+            continue
+    
+    if successful_encoding is None:
+        print("Error: Could not read CSV file with any supported encoding!")
+        return []
+    
+    try:
+        # Process rows 4-20 (index 3-19 in 0-based indexing)
+        for i in range(3, min(20, len(all_rows))):
+            row = all_rows[i]
+            if len(row) >= 9:  # Ensure we have columns A through I
+                csv_data.append({
+                    'A': str(row[0]).strip(),  # Bundesland
+                    'E': str(row[4]).strip(),  # Textkennzeichen
+                    'H': str(row[7]).strip(),  # Gemeinde/Stadt
+                    'I': str(row[8]).strip()   # Verwaltungssitz
+                })
+            else:
+                print(f"Warning: Row {i+1} doesn't have enough columns, skipping...")
+                
     except FileNotFoundError:
         print(f"Error: CSV file {csv_file} not found!")
         return []
     except Exception as e:
-        print(f"Error reading CSV file: {e}")
+        print(f"Error processing CSV data: {e}")
         return []
     
+    print(f"Successfully loaded {len(csv_data)} rows from CSV")
     return csv_data
 
 
@@ -278,6 +349,7 @@ async def main(args):
 
     # Process each row
     results = []
+    output_file = "ai_responses.csv"
     
     for row_idx, data in enumerate(csv_data, start=4):  # Start from row 4
         print(f"\n{'='*60}")
@@ -305,12 +377,16 @@ async def main(args):
             print(f"Response received: {len(response)} characters")
         
         results.append(row_result)
+        
+        # Save result immediately after each row is processed
+        write_header = (row_idx == 4)  # Write header only for first row
+        append_result_to_csv(row_result, output_file, write_header)
     
-    # Save results to CSV
+    # Final save (as backup, in case individual saves failed)
     print(f"\n{'='*60}")
-    print("Saving results...")
+    print("Final backup save...")
     print(f"{'='*60}")
-    save_results_to_csv(results)
+    save_results_to_csv(results, "ai_responses_backup.csv")
     
     print("Processing complete!")
 

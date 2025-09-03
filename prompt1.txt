@@ -1,5 +1,67 @@
-Führe eine interne Recherche durch und beantworte:
-- Was ist die Hauptstadt von Deutschland?  
+# PROMPT 1: E-MAIL & KONTAKTSUCHE (ERWEITERT)
+
+## HAUPTAUFGABE
+Finde direkte E-Mail-Adressen von zuständigen Personen/Behörden für Hochwasserschutz und Starkregenprävention am folgenden Standort:
+
+**Standortdaten:**
+- Land: {{A}}
+- Textkennzeichen: {{E}}
+- Gemeinde/Stadt: {{H}}
+- Verwaltungssitz: {{I}}
+
+## SPEZIFISCHE SUCHANFRAGEN (in dieser Reihenfolge durchführen):
+
+### Suchanfrage 1: Tiefbauamt Hochwasserschutz Ansprechpartner
+```
+"{{H}}" Tiefbauamt Hochwasserschutz Ansprechpartner Email
+```
+
+### Suchanfrage 2: Tiefbauamt Starkregenprävention Zuständiger
+```
+"{{H}}" Tiefbauamt Starkregenprävention zuständig Email Kontakt
+```
+
+### Suchanfrage 3: Tiefbauamt Entwässerung Sachbearbeiter
+```
+"{{H}}" Tiefbauamt Entwässerung Sachbearbeiter Hochwasser Email
+```
+
+### Suchanfrage 4: Wasserwehr Hochwasserschutz Leiter
+```
+"{{H}}" Wasserwehr Hochwasserschutz Leiter Ansprechpartner Email
+```
+
+### Suchanfrage 5: Wasserwehr Starkregen Zuständiger
+```
+"{{H}}" Wasserwehr Starkregen zuständig Sachbearbeiter Email
+```
+
+### Suchanfrage 6: Wasserwehr Feuerwehr Hochwasserbeauftragte
+```
+"{{H}}" Wasserwehr Feuerwehr Hochwasserbeauftragte Ansprechpartner Email
+```
 
 ## AUSGABEFORMAT
-Schreibe nur den Stadtnamen, sonst nichts.
+Gib als Antwort nur dieses Format, sonst nichts:
+
+**Wenn du nichts findest:**
+```
+NICHTS GEFUNDEN
+```
+
+**Wenn du E-Mails findest:**
+```
+email1@example.de
+[Name Vorname] - [Funktion]
+[Quelle-URL]
+
+email2@example.de  
+[Name Vorname] - [Funktion]
+[Quelle-URL]
+
+email3@example.de
+[Name Vorname] - [Funktion] 
+[Quelle-URL]
+
+etc...
+```

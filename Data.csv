@@ -1,0 +1,457 @@
+Land,,Satz-art,Textkennzeichen,,"Amtlicher
+Regional-
+schlüssel (ARS)","Amtlicher
+Gemeinde-schlüssel (AGS)",Gemeinde/Stadt,Verwaltungssitz,Straße,PLZ,Ort,Fläche 1,Bevölkerung 2,,,
+,,,,,,,,,,,,in km2,insgesamt,männlich,weiblich,je km2
+,,,,,,,,,,,,am 31.12.2021 (Jahr),am 31.12.2021 (Jahr) auf Grundlage des Zensus 2011,,,
+6,Hessen,10,,,6,,Hessen,Hessische Staatskanzlei,Georg-August-Zinn-Straße 1,65183,Wiesbaden,"21115,63",6 295 017,3 108 589,3 186 428,298
+6,Hessen,20,,,64,,Reg.-Bez. Darmstadt,Regierungspräsidium Darmstadt,Luisenplatz 2,64283,Darmstadt,"7444,25",4 026 564,1 985 349,2 041 215,541
+6,Hessen,40,41,Kreisfreie Stadt,6411,,"Darmstadt, Wissenschaftsstadt",Magistrat der Stadt Darmstadt,Luisenplatz 5 A,64283,Darmstadt,"122,07",159 631,81 251,78 380,1 308
+6,Hessen,60,61,Kreisfreie Stadt,64110000000,6411000,"Darmstadt, Wissenschaftsstadt",Magistrat der Stadt Darmstadt,Luisenplatz 5 A,64283,Darmstadt,"122,07",159 631,81 251,78 380,1 308
+6,Hessen,40,41,Kreisfreie Stadt,6412,,"Frankfurt am Main, Stadt",Magistrat der Stadt Frankfurt am Main,Römerberg 23,60311,Frankfurt am Main,"248,31",759 224,374 525,384 699,3 058
+6,Hessen,60,61,Kreisfreie Stadt,64120000000,6412000,"Frankfurt am Main, Stadt",Magistrat der Stadt Frankfurt am Main,Römerberg 23,60311,Frankfurt am Main,"248,31",759 224,374 525,384 699,3 058
+6,Hessen,40,41,Kreisfreie Stadt,6413,,"Offenbach am Main, Stadt",Magistrat der Stadt Offenbach am Main,Berliner Straße 100,63065,Offenbach am Main,"44,88",131 295,65 222,66 073,2 925
+6,Hessen,60,61,Kreisfreie Stadt,64130000000,6413000,"Offenbach am Main, Stadt",Magistrat der Stadt Offenbach am Main,Berliner Straße 100,63065,Offenbach am Main,"44,88",131 295,65 222,66 073,2 925
+6,Hessen,40,41,Kreisfreie Stadt,6414,,"Wiesbaden, Landeshauptstadt",Magistrat der Stadt Wiesbaden,Schlossplatz 6,65183,Wiesbaden,"203,87",278 950,133 538,145 412,1 368
+6,Hessen,60,61,Kreisfreie Stadt,64140000000,6414000,"Wiesbaden, Landeshauptstadt",Magistrat der Stadt Wiesbaden,Schlossplatz 6,65183,Wiesbaden,"203,87",278 950,133 538,145 412,1 368
+6,Hessen,40,44,Landkreis,6431,,Bergstraße,Kreisausschuss des Lkr. Bergstraße,Gräffstraße 5,64646,Heppenheim,"719,47",271 166,133 915,137 251,377
+6,Hessen,60,64,Kreisangehörige Gemeinde,64310001001,6431001,Abtsteinach,Gemeindevorstand der Gemeinde Abtsteinach,Kirchstraße 2,69518,Abtsteinach,"11,02",2 437,1 186,1 251,221
+6,Hessen,60,63,Stadt,64310002002,6431002,"Bensheim, Stadt",Magistrat der Stadt Bensheim,Kirchbergstraße 18,64625,Bensheim,"57,83",40 629,19 887,20 742,703
+6,Hessen,60,64,Kreisangehörige Gemeinde,64310003003,6431003,Biblis,Gemeindevorstand der Gemeinde Biblis,Darmstädter Straße 25,68647,Biblis,"40,47",9 169,4 623,4 546,227
+6,Hessen,60,64,Kreisangehörige Gemeinde,64310004004,6431004,Birkenau,Gemeindevorstand der Gemeinde Birkenau,Hauptstraße 119,69488,Birkenau,"24,54",9 874,4 822,5 052,402
+6,Hessen,60,63,Stadt,64310005005,6431005,"Bürstadt, Stadt",Magistrat der Stadt Bürstadt,Rathausstraße 2,68642,Bürstadt,"34,46",16 430,8 104,8 326,477
+6,Hessen,60,64,Kreisangehörige Gemeinde,64310006006,6431006,Einhausen,Gemeindevorstand der Gemeinde Einhausen,Marktplatz 5,64683,Einhausen,"26,67",6 554,3 247,3 307,246
+6,Hessen,60,64,Kreisangehörige Gemeinde,64310007007,6431007,Fürth,Gemeindevorstand der Gemeinde Fürth,Hauptstraße 19,64658,Fürth,"38,41",10 587,5 299,5 288,276
+6,Hessen,60,64,Kreisangehörige Gemeinde,64310008008,6431008,Gorxheimertal,Gemeindevorstand der Gemeinde Gorxheimertal,Siedlungsstraße 35,69517,Gorxheimertal,"10,45",4 155,2 055,2 100,398
+6,Hessen,60,64,Kreisangehörige Gemeinde,64310009009,6431009,Grasellenbach,Gemeindevorstand der Gemeinde Grasellenbach,Schulstraße 1,64689,Grasellenbach,"22,88",4 162,2 150,2 012,182
+6,Hessen,60,64,Kreisangehörige Gemeinde,64310010010,6431010,Groß-Rohrheim,Gemeindevorstand der Gemeinde Groß-Rohrheim,Rheinstraße 14,68649,Groß-Rohrheim,"19,56",3 724,1 873,1 851,190
+6,Hessen,60,63,Stadt,64310011011,6431011,"Heppenheim (Bergstraße), Kreisstadt",Magistrat der Stadt Heppenheim (Bergstraße),Großer Markt 1,64646,Heppenheim (Bergstraße),"52,12",26 357,13 063,13 294,506
+6,Hessen,60,63,Stadt,64310012012,6431012,"Hirschhorn (Neckar), Stadt",Magistrat der Stadt Hirschhorn (Neckar),Hauptstraße 17,69434,Hirschhorn (Neckar),"30,85",3 382,1 665,1 717,110
+6,Hessen,60,63,Stadt,64310013013,6431013,"Lampertheim, Stadt",Magistrat der Stadt Lampertheim,Römerstraße 102,68623,Lampertheim,"72,27",32 682,16 178,16 504,452
+6,Hessen,60,64,Kreisangehörige Gemeinde,64310014014,6431014,Lautertal (Odenwald),Gemeindevorstand der Gemeinde Lautertal (Odenwald),Nibelungenstraße 280,64686,Lautertal (Odenwald),"30,75",7 186,3 507,3 679,234
+6,Hessen,60,63,Stadt,64310015015,6431015,"Lindenfels, Stadt",Magistrat der Stadt Lindenfels,Burgstraße 39,64678,Lindenfels,"21,09",5 057,2 479,2 578,240
+6,Hessen,60,63,Stadt,64310016016,6431016,"Lorsch, Karolingerstadt",Magistrat der Stadt Lorsch,Kaiser-Wilhelm-Platz 1,64653,Lorsch,"25,24",13 930,6 787,7 143,552
+6,Hessen,60,64,Kreisangehörige Gemeinde,64310017017,6431017,Mörlenbach,Gemeindevorstand der Gemeinde Mörlenbach,Rathausplatz 1,69509,Mörlenbach,"27,22",10 091,4 974,5 117,371
+6,Hessen,60,63,Stadt,64310018018,6431018,"Neckarsteinach, Stadt",Magistrat der Stadt Neckarsteinach,Hauptstraße 7,69239,Neckarsteinach,"17,24",3 938,1 969,1 969,228
+6,Hessen,60,64,Kreisangehörige Gemeinde,64310019019,6431019,Rimbach,Gemeindevorstand der Gemeinde Rimbach,Rathausstraße 1,64668,Rimbach,"23,16",8 767,4 342,4 425,379
+6,Hessen,60,63,Stadt,64310020020,6431020,"Viernheim, Stadt",Magistrat der Stadt Viernheim,Kettelerstraße 3,68519,Viernheim,"48,41",34 189,16 817,17 372,706
+6,Hessen,60,64,Kreisangehörige Gemeinde,64310021021,6431021,Wald-Michelbach,Gemeindevorstand der Gemeinde Wald-Michelbach,In der Gass 17,69483,Wald-Michelbach,"74,31",10 664,5 336,5 328,144
+6,Hessen,60,63,Stadt,64310022022,6431022,"Zwingenberg, Stadt",Magistrat der Stadt Zwingenberg,Untergasse 16,64673,Zwingenberg,"5,66",7 202,3 552,3 650,1 272
+6,Hessen,40,44,Landkreis,6432,,Darmstadt-Dieburg,Kreisausschuss des Lkr. Darmstadt-Dieburg,Jägertorstraße 207,64289,Darmstadt,"658,64",296 900,147 308,149 592,451
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320001001,6432001,Alsbach-Hähnlein,Gemeindevorstand der Gemeinde Alsbach-Hähnlein,Bickenbacher Straße 6,64665,Alsbach-Hähnlein,"15,77",9 080,4 450,4 630,576
+6,Hessen,60,63,Stadt,64320002002,6432002,"Babenhausen, Stadt",Magistrat der Stadt Babenhausen,Marktplatz 2,64832,Babenhausen,"66,85",16 920,8 420,8 500,253
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320003003,6432003,Bickenbach,Gemeindevorstand der Gemeinde Bickenbach,Darmstädter Straße 7,64404,Bickenbach,"9,26",6 100,2 938,3 162,659
+6,Hessen,60,63,Stadt,64320004004,6432004,"Dieburg, Stadt",Magistrat der Stadt Dieburg,Markt 4,64807,Dieburg,"23,08",15 500,7 565,7 935,672
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320005005,6432005,Eppertshausen,Gemeindevorstand der Gemeinde Eppertshausen,Franz-Gruber-Platz 14,64859,Eppertshausen,"13,11",6 265,3 186,3 079,478
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320006006,6432006,Erzhausen,Gemeindevorstand der Gemeinde Erzhausen,Rodenseestraße 3,64390,Erzhausen,"7,40",8 004,3 995,4 009,1 082
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320007007,6432007,Fischbachtal,Gemeindevorstand der Gemeinde Fischbachtal,Darmstädter Straße 8,64405,Fischbachtal,"13,27",2 722,1 354,1 368,205
+6,Hessen,60,63,Stadt,64320008008,6432008,"Griesheim, Stadt",Magistrat der Stadt Griesheim,Wilhelm-Leuschner-Straße 75,64347,Griesheim,"21,55",27 357,13 603,13 754,1 269
+6,Hessen,60,63,Stadt,64320009009,6432009,"Groß-Bieberau, Stadt",Magistrat der Stadt Groß-Bieberau,Marktstraße 28 - 30,64401,Groß-Bieberau,"18,27",4 693,2 333,2 360,257
+6,Hessen,60,63,Stadt,64320010010,6432010,"Groß-Umstadt, Stadt",Magistrat der Stadt Groß-Umstadt,Markt 1,64823,Groß-Umstadt,"86,84",21 001,10 433,10 568,242
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320011011,6432011,Groß-Zimmern,Gemeindevorstand der Gemeinde Groß-Zimmern,Rathausplatz 1,64846,Groß-Zimmern,"21,26",14 691,7 349,7 342,691
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320012012,6432012,Messel,Gemeindevorstand der Gemeinde Messel,Kohlweg 15,64409,Messel,"14,82",4 090,2 080,2 010,276
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320013013,6432013,Modautal,Gemeindevorstand der Gemeinde Modautal,Odenwaldstraße 34,64397,Modautal,"31,79",5 073,2 559,2 514,160
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320014014,6432014,Mühltal,Gemeindevorstand der Gemeinde Mühltal,Ober-Ramstädter Straße 2 - 4,64367,Mühltal,"25,34",13 819,6 800,7 019,545
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320015015,6432015,Münster (Hessen),Gemeindevorstand der Gemeinde Münster (Hessen),Mozartstraße 8,64839,Münster (Hessen),"20,78",14 397,7 084,7 313,693
+6,Hessen,60,63,Stadt,64320016016,6432016,"Ober-Ramstadt, Stadt",Magistrat der Stadt Ober-Ramstadt,Darmstädter Straße 29,64372,Ober-Ramstadt,"41,88",15 011,7 385,7 626,358
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320017017,6432017,Otzberg,Gemeindevorstand der Gemeinde Otzberg,Otzbergstraße 13,64853,Otzberg,"41,94",6 477,3 242,3 235,154
+6,Hessen,60,63,Stadt,64320018018,6432018,"Pfungstadt, Stadt",Magistrat der Stadt Pfungstadt,Kirchstraße 12 - 14,64319,Pfungstadt,"42,54",24 885,12 228,12 657,585
+6,Hessen,60,63,Stadt,64320019019,6432019,"Reinheim, Stadt",Magistrat der Stadt Reinheim,Cestasplatz 1,64354,Reinheim,"27,70",16 385,8 083,8 302,592
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320020020,6432020,Roßdorf,Gemeindevorstand der Gemeinde Roßdorf,Erbacher Straße 1,64380,Roßdorf,"20,60",12 755,6 378,6 377,619
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320021021,6432021,Schaafheim,Gemeindevorstand der Gemeinde Schaafheim,Wilhelm-Leuschner-Straße 3,64850,Schaafheim,"32,16",9 282,4 654,4 628,289
+6,Hessen,60,64,Kreisangehörige Gemeinde,64320022022,6432022,Seeheim-Jugenheim,Gemeindevorstand der Gemeinde Seeheim-Jugenheim,Schulstraße 12,64342,Seeheim-Jugenheim,"28,00",16 451,8 043,8 408,588
+6,Hessen,60,63,Stadt,64320023023,6432023,"Weiterstadt, Stadt",Magistrat der Stadt Weiterstadt,Riedbahnstraße 6,64331,Weiterstadt,"34,40",25 942,13 146,12 796,754
+6,Hessen,40,44,Landkreis,6433,,Groß-Gerau,Kreisausschuss des Lkr. Groß-Gerau,Wilhelm-Seipp-Straße 4,64521,Groß-Gerau,"453,03",276 307,138 390,137 917,610
+6,Hessen,60,64,Kreisangehörige Gemeinde,64330001001,6433001,Biebesheim am Rhein,Gemeindevorstand der Gemeinde Biebesheim am Rhein,Rathausplatz 1,64584,Biebesheim am Rhein,"18,68",6 625,3 356,3 269,355
+6,Hessen,60,64,Kreisangehörige Gemeinde,64330002002,6433002,Bischofsheim,Gemeindevorstand der Gemeinde Bischofsheim,Schulstraße 13,65474,Bischofsheim,"9,03",12 977,6 337,6 640,1 437
+6,Hessen,60,64,Kreisangehörige Gemeinde,64330003003,6433003,Büttelborn,Gemeindevorstand der Gemeinde Büttelborn,Mainzer Straße 13,64572,Büttelborn,"30,01",14 955,7 400,7 555,498
+6,Hessen,60,63,Stadt,64330004004,6433004,"Gernsheim, Schöfferstadt",Magistrat der Stadt Gernsheim,Stadthausplatz 1,64579,Gernsheim,"40,11",10 772,5 344,5 428,269
+6,Hessen,60,63,Stadt,64330005005,6433005,"Ginsheim-Gustavsburg, Stadt",Gemeindevorstand der Gemeinde Ginsheim-Gustavsburg,Dr.-Herrmann-Straße 32,65462,Ginsheim-Gustavsburg,"13,94",16 761,8 298,8 463,1 202
+6,Hessen,60,63,Stadt,64330006006,6433006,"Groß-Gerau, Stadt",Magistrat der Stadt Groß-Gerau,Am Marktplatz 1,64521,Groß-Gerau,"54,47",26 068,12 973,13 095,479
+6,Hessen,60,63,Stadt,64330007007,6433007,"Kelsterbach, Stadt",Magistrat der Stadt Kelsterbach,Mörfelder Straße 33,65451,Kelsterbach,"15,41",17 013,8 849,8 164,1 104
+6,Hessen,60,63,Stadt,64330008008,6433008,"Mörfelden-Walldorf, Stadt",Magistrat der Stadt Mörfelden-Walldorf,Westendstraße 8,64546,Mörfelden-Walldorf,"44,13",34 641,17 543,17 098,785
+6,Hessen,60,64,Kreisangehörige Gemeinde,64330009009,6433009,Nauheim,Gemeindevorstand der Gemeinde Nauheim,Weingartenstraße 46 - 50,64569,Nauheim,"13,77",10 819,5 326,5 493,786
+6,Hessen,60,63,Stadt,64330010010,6433010,"Raunheim, Stadt",Magistrat der Stadt Raunheim,Am Stadtzentrum 1,65479,Raunheim,"12,60",16 137,8 201,7 936,1 281
+6,Hessen,60,63,Stadt,64330011011,6433011,"Riedstadt, Büchnerstadt",Magistrat der Stadt Riedstadt,Rathausplatz 1,64560,Riedstadt,"73,73",23 931,12 006,11 925,325
+6,Hessen,60,63,Stadt,64330012012,6433012,"Rüsselsheim am Main, Stadt",Magistrat der Stadt Rüsselsheim am Main,Marktplatz 4,65428,Rüsselsheim am Main,"58,29",66 125,33 037,33 088,1 134
+6,Hessen,60,64,Kreisangehörige Gemeinde,64330013013,6433013,Stockstadt am Rhein,Gemeindevorstand der Gemeinde Stockstadt am Rhein,Kirchstrasse 6,64589,Stockstadt am Rhein,"18,73",6 275,3 207,3 068,335
+6,Hessen,60,64,Kreisangehörige Gemeinde,64330014014,6433014,Trebur,Gemeindevorstand der Gemeinde Trebur,Herrngasse 3,65468,Trebur,"50,13",13 208,6 513,6 695,263
+6,Hessen,40,44,Landkreis,6434,,Hochtaunuskreis,Kreisausschuss des Hochtaunuskreises,Ludwig-Erhard-Anlage 1-5,61352,Bad Homburg v. d. Höhe,"481,84",237 041,114 959,122 082,492
+6,Hessen,60,63,Stadt,64340001001,6434001,"Bad Homburg v. d. Höhe, Stadt",Magistrat der Stadt Bad Homburg v. d. Höhe,Rathausplatz 1,61343,Bad Homburg v. d. Höhe,"51,14",54 144,25 729,28 415,1 059
+6,Hessen,60,63,Stadt,64340002002,6434002,"Friedrichsdorf, Stadt",Magistrat der Stadt Friedrichsdorf,Hugenottenstraße 55,61381,Friedrichsdorf,"30,13",25 450,12 497,12 953,845
+6,Hessen,60,64,Kreisangehörige Gemeinde,64340003003,6434003,Glashütten,Gemeindevorstand der Gemeinde Glashütten,Schloßborner Weg 2,61479,Glashütten,"27,10",5 383,2 609,2 774,199
+6,Hessen,60,64,Kreisangehörige Gemeinde,64340004004,6434004,Grävenwiesbach,Gemeindevorstand der Gemeinde Grävenwiesbach,Bahnhofsweg 2 a,61279,Grävenwiesbach,"43,15",5 411,2 737,2 674,125
+6,Hessen,60,63,Stadt,64340005005,6434005,"Königstein im Taunus, Stadt",Magistrat der Stadt Königstein im Taunus,Burgweg 5,61462,Königstein im Taunus,"25,05",16 540,7 876,8 664,660
+6,Hessen,60,63,Stadt,64340006006,6434006,"Kronberg im Taunus, Stadt",Magistrat der Stadt Kronberg im Taunus,Katharinenstraße 7,61476,Kronberg im Taunus,"18,58",18 322,8 657,9 665,986
+6,Hessen,60,63,Stadt,64340007007,6434007,"Neu-Anspach, Stadt",Magistrat der Stadt Neu-Anspach,Bahnhofstraße 26,61267,Neu-Anspach,"36,12",14 439,7 131,7 308,400
+6,Hessen,60,63,Stadt,64340008008,6434008,"Oberursel (Taunus), Stadt",Magistrat der Stadt Oberursel (Taunus),Rathausplatz 1,61440,Oberursel (Taunus),"45,34",46 660,22 631,24 029,1 029
+6,Hessen,60,64,Kreisangehörige Gemeinde,64340009009,6434009,Schmitten im Taunus,Gemeindevorstand der Gemeinde Schmitten,Parkstraße 2,61389,Schmitten,"35,51",9 478,4 777,4 701,267
+6,Hessen,60,63,Stadt,64340010010,6434010,"Steinbach (Taunus), Stadt",Magistrat der Stadt Steinbach (Taunus),Gartenstraße 20,61449,Steinbach (Taunus),"4,40",10 647,5 165,5 482,2 420
+6,Hessen,60,63,Stadt,64340011011,6434011,"Usingen, Stadt",Magistrat der Stadt Usingen,Wilhelmstraße 1,61250,Usingen,"55,81",14 733,7 267,7 466,264
+6,Hessen,60,64,Kreisangehörige Gemeinde,64340012012,6434012,Wehrheim,Gemeindevorstand der Gemeinde Wehrheim,Dorfborngasse 1,61273,Wehrheim,"38,34",9 308,4 633,4 675,243
+6,Hessen,60,64,Kreisangehörige Gemeinde,64340013013,6434013,Weilrod,Gemeindevorstand der Gemeinde Weilrod,Am Senner 1,61276,Weilrod,"71,17",6 526,3 250,3 276,92
+6,Hessen,40,44,Landkreis,6435,,Main-Kinzig-Kreis,Kreisausschuss des Main-Kinzig-Kreises,Barbarossastraße 24,63571,Gelnhausen,"1397,32",423 465,208 904,214 561,303
+6,Hessen,60,63,Stadt,64350001001,6435001,"Bad Orb, Stadt",Magistrat der Stadt Bad Orb,Frankfurter Straße 2,63619,Bad Orb,"47,75",10 333,4 960,5 373,216
+6,Hessen,60,63,Stadt,64350002002,6435002,"Bad Soden-Salmünster, Stadt",Magistrat der Stadt Bad Soden-Salmünster,Rathausstraße 1,63628,Bad Soden-Salmünster,"58,59",13 540,6 690,6 850,231
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350003003,6435003,Biebergemünd,Gemeindevorstand der Gemeinde Biebergemünd,Am Gemeindezentrum 1,63599,Biebergemünd,"78,45",8 319,4 187,4 132,106
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350004004,6435004,Birstein,Gemeindevorstand der Gemeinde Birstein,Carl-Lomb-Straße 1,63633,Birstein,"86,61",6 206,3 084,3 122,72
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350005005,6435005,Brachttal,Gemeindevorstand der Gemeinde Brachttal,Wächtersbacher Straße 48,63636,Brachttal,"30,84",5 036,2 489,2 547,163
+6,Hessen,60,63,Stadt,64350006006,6435006,"Bruchköbel, Stadt",Magistrat der Stadt Bruchköbel,Hauptstraße 32,63486,Bruchköbel,"29,69",20 602,10 058,10 544,694
+6,Hessen,60,63,Stadt,64350007007,6435007,"Erlensee, Stadt",Magistrat der Stadt Erlensee,Am Rathaus 3,63526,Erlensee,"18,58",15 579,7 771,7 808,838
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350008008,6435008,Flörsbachtal,Gemeindevorstand der Gemeinde Flörsbachtal,Hauptstraße 14,63639,Flörsbachtal,"52,11",2 303,1 139,1 164,44
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350009009,6435009,Freigericht,Gemeindevorstand der Gemeinde Freigericht,Rathausstraße 13,63579,Freigericht,"33,47",14 428,7 106,7 322,431
+6,Hessen,60,63,Stadt,64350010010,6435010,"Gelnhausen, Barbarossastadt, Kreisstadt",Magistrat der Stadt Gelnhausen,Obermarkt 7,63571,Gelnhausen,"45,15",23 220,11 305,11 915,514
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350011011,6435011,Großkrotzenburg,Gemeindevorstand der Gemeinde Großkrotzenburg,Bahnhofstraße 3,63538,Großkrotzenburg,"7,47",7 535,3 766,3 769,1 009
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350012012,6435012,Gründau,Gemeindevorstand der Gemeinde Gründau,Am Bürgerzentrum 1,63584,Gründau,"67,60",14 653,7 222,7 431,217
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350013013,6435013,Hammersbach,Gemeindevorstand der Gemeinde Hammersbach,Köbler Weg 44,63546,Hammersbach,"20,14",4 885,2 381,2 504,243
+6,Hessen,60,63,Stadt,64350014014,6435014,"Hanau, Brüder-Grimm-Stadt",Magistrat der Stadt Hanau,Am Markt 14 - 18,63450,Hanau,"76,47",98 502,48 622,49 880,1 288
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350015015,6435015,Hasselroth,Gemeindevorstand der Gemeinde Hasselroth,Bodo-Käppel-Platz 1,63594,Hasselroth,"18,93",7 327,3 633,3 694,387
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350016016,6435016,Jossgrund,Gemeindevorstand der Gemeinde Jossgrund,Martinusstraße 2,63637,Jossgrund,"50,69",3 371,1 695,1 676,67
+6,Hessen,60,63,Stadt,64350017017,6435017,"Langenselbold, Stadt",Magistrat der Stadt Langenselbold,Schloßpark 2,63505,Langenselbold,"26,23",14 421,7 070,7 351,550
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350018018,6435018,Linsengericht,Gemeindevorstand der Gemeinde Linsengericht,Amtshofstraße 1,63589,Linsengericht,"29,80",9 847,4 865,4 982,330
+6,Hessen,60,63,Stadt,64350019019,6435019,"Maintal, Stadt",Magistrat der Stadt Maintal,Klosterhofstraße 4 - 6,63477,Maintal,"32,41",39 287,19 395,19 892,1 212
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350020020,6435020,Neuberg,Gemeindevorstand der Gemeinde Neuberg,In den Gräben 15,63543,Neuberg,"10,55",5 389,2 669,2 720,511
+6,Hessen,60,63,Stadt,64350021021,6435021,"Nidderau, Stadt",Magistrat der Stadt Nidderau,Am Steinweg 1,61130,Nidderau,"46,73",20 539,10 151,10 388,440
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350022022,6435022,Niederdorfelden,Gemeindevorstand der Gemeinde Niederdorfelden,Burgstraße 5,61138,Niederdorfelden,"6,52",3 901,1 913,1 988,598
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350023023,6435023,Rodenbach,Gemeindevorstand der Gemeinde Rodenbach,Buchbergstraße 2,63517,Rodenbach,"16,74",11 204,5 448,5 756,669
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350024024,6435024,Ronneburg,Gemeindevorstand der Gemeinde Ronneburg,Schulstraße 9,63549,Ronneburg,"14,25",3 445,1 685,1 760,242
+6,Hessen,60,63,Stadt,64350025025,6435025,"Schlüchtern, Stadt",Magistrat der Stadt Schlüchtern,Krämerstraße 2,36381,Schlüchtern,"113,30",15 927,7 893,8 034,141
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350026026,6435026,Schöneck,Gemeindevorstand der Gemeinde Schöneck,Herrnhofstraße 8,61137,Schöneck,"21,50",11 853,5 807,6 046,551
+6,Hessen,60,64,Kreisangehörige Gemeinde,64350027027,6435027,Sinntal,Gemeindevorstand der Gemeinde Sinntal,Am Rathaus 11,36391,Sinntal,"111,82",8 780,4 444,4 336,79
+6,Hessen,60,63,Stadt,64350028028,6435028,"Steinau an der Straße, Brüder-Grimm-Stadt",Magistrat der Stadt Steinau an der Straße,Brüder-Grimm-Straße 47,36396,Steinau an der Straße,"104,86",10 236,5 064,5 172,98
+6,Hessen,60,63,Stadt,64350029029,6435029,"Wächtersbach, Stadt",Magistrat der Stadt Wächtersbach,Schloss 1,63607,Wächtersbach,"50,79",12 797,6 392,6 405,252
+6,Hessen,40,44,Landkreis,6436,,Main-Taunus-Kreis,Kreisausschuss des Main-Taunus-Kreises,Am Kreishaus 1-5,65719,Hofheim a. T.,"222,53",239 276,117 236,122 040,1 075
+6,Hessen,60,63,Stadt,64360001001,6436001,"Bad Soden am Taunus, Stadt",Magistrat der Stadt Bad Soden am Taunus,Königsteiner Straße 73,65812,Bad Soden am Taunus,"12,50",23 036,11 074,11 962,1 843
+6,Hessen,60,63,Stadt,64360002002,6436002,"Eppstein, Stadt",Magistrat der Stadt Eppstein,Hauptstraße 99,65817,Eppstein,"24,19",13 673,6 662,7 011,565
+6,Hessen,60,63,Stadt,64360003003,6436003,"Eschborn, Stadt",Magistrat der Stadt Eschborn,Rathausplatz 36,65760,Eschborn,"12,13",21 734,10 782,10 952,1 792
+6,Hessen,60,63,Stadt,64360004004,6436004,"Flörsheim am Main, Stadt",Magistrat der Stadt Flörsheim am Main,Rathausplatz 3,65439,Flörsheim am Main,"22,99",21 671,10 620,11 051,943
+6,Hessen,60,63,Stadt,64360005005,6436005,"Hattersheim am Main, Stadt",Magistrat der Stadt Hattersheim am Main,Im Nassauer Hof 1 - 3,65795,Hattersheim am Main,"15,80",28 040,13 907,14 133,1 775
+6,Hessen,60,63,Stadt,64360006006,6436006,"Hochheim am Main, Stadt",Magistrat der Stadt Hochheim am Main,Burgeffstraße 30 / Le-Pontet-Platz,65239,Hochheim am Main,"19,47",18 310,8 980,9 330,940
+6,Hessen,60,63,Stadt,64360007007,6436007,"Hofheim am Taunus, Kreisstadt",Magistrat der Stadt Hofheim am Taunus,Chinonplatz 2,65719,Hofheim am Taunus,"57,43",39 704,19 437,20 267,691
+6,Hessen,60,63,Stadt,64360008008,6436008,"Kelkheim (Taunus), Stadt",Magistrat der Stadt Kelkheim (Taunus),Gagernring 6,65779,Kelkheim (Taunus),"30,73",28 913,14 162,14 751,941
+6,Hessen,60,64,Kreisangehörige Gemeinde,64360009009,6436009,Kriftel,Gemeindevorstand der Gemeinde Kriftel,Frankfurter Straße 33 - 37,65830,Kriftel,"6,76",11 020,5 376,5 644,1 630
+6,Hessen,60,64,Kreisangehörige Gemeinde,64360010010,6436010,Liederbach am Taunus,Gemeindevorstand der Gemeinde Liederbach am Taunus,Villebon-Platz 9 - 11,65835,Liederbach am Taunus,"6,20",8 728,4 356,4 372,1 408
+6,Hessen,60,63,Stadt,64360011011,6436011,"Schwalbach am Taunus, Stadt",Magistrat der Stadt Schwalbach am Taunus,Marktplatz 1 - 2,65824,Schwalbach am Taunus,"6,47",15 269,7 384,7 885,2 360
+6,Hessen,60,64,Kreisangehörige Gemeinde,64360012012,6436012,Sulzbach (Taunus),Gemeindevorstand der Gemeinde Sulzbach (Taunus),Hauptstraße 11,65843,Sulzbach (Taunus),"7,85",9 178,4 496,4 682,1 169
+6,Hessen,40,44,Landkreis,6437,,Odenwaldkreis,Kreisausschuss des Odenwaldkreises,Michelstädter Straße 12,64711,Erbach,"623,97",96 953,47 911,49 042,155
+6,Hessen,60,63,Stadt,64370001001,6437001,"Bad König, Stadt",Magistrat der Stadt Bad König,Schloßplatz 3,64732,Bad König,"46,73",9 861,4 741,5 120,211
+6,Hessen,60,64,Kreisangehörige Gemeinde,64370003003,6437003,Brensbach,Gemeindevorstand der Gemeinde Brensbach,Ezyer Straße 5,64395,Brensbach,"23,18",4 993,2 516,2 477,215
+6,Hessen,60,63,Stadt,64370004004,6437004,"Breuberg, Stadt",Magistrat der Stadt Breuberg,Ernst-Ludwig-Straße 2-4,64747,Breuberg,"30,76",7 584,3 749,3 835,247
+6,Hessen,60,64,Kreisangehörige Gemeinde,64370005005,6437005,Brombachtal,Gemeindevorstand der Gemeinde Brombachtal,Hauptstraße 59,64753,Brombachtal,"20,44",3 501,1 729,1 772,171
+6,Hessen,60,63,Stadt,64370006006,6437006,"Erbach, Kreisstadt",Magistrat der Stadt Erbach,Neckarstraße 3,64711,Erbach,"61,52",13 818,6 735,7 083,225
+6,Hessen,60,64,Kreisangehörige Gemeinde,64370007007,6437007,Fränkisch-Crumbach,Gemeindevorstand der Gemeinde Fränkisch-Crumbach,Rodensteiner Straße 8,64407,Fränkisch-Crumbach,"16,12",3 088,1 526,1 562,192
+6,Hessen,60,64,Kreisangehörige Gemeinde,64370009009,6437009,Höchst i. Odw.,Gemeindevorstand der Gemeinde Höchst i.Odw.,Montmelianer Platz 4,64739,Höchst i. Odw.,"30,51",10 165,5 052,5 113,333
+6,Hessen,60,64,Kreisangehörige Gemeinde,64370010010,6437010,Lützelbach,Gemeindevorstand der Gemeinde Lützelbach,Mainstraße 1,64750,Lützelbach,"35,44",6 831,3 415,3 416,193
+6,Hessen,60,63,Stadt,64370011011,6437011,"Michelstadt, Stadt",Magistrat der Stadt Michelstadt,Frankfurter Straße 3,64720,Michelstadt,"86,98",16 078,7 985,8 093,185
+6,Hessen,60,64,Kreisangehörige Gemeinde,64370012012,6437012,Mossautal,Gemeindevorstand der Gemeinde Mossautal,Ortsstraße 124,64756,Mossautal,"48,49",2 399,1 209,1 190,49
+6,Hessen,60,64,Kreisangehörige Gemeinde,64370013013,6437013,Reichelsheim (Odenwald),Gemeindevorstand der Gemeinde Reichelsheim (Odenwald),Bismarckstraße 43,64385,Reichelsheim (Odenwald),"58,21",8 437,4 187,4 250,145
+6,Hessen,60,63,Stadt,64370016016,6437016,"Oberzent, Stadt",Magistrat der Stadt Oberzent,Metzkeil 1,64760,Oberzent,"165,61",10 198,5 067,5 131,62
+6,Hessen,40,44,Landkreis,6438,,Offenbach,Kreisausschuss des Lkr. Offenbach,Werner-Hilpert-Straße 1,63128,Dietzenbach,"356,24",357 466,176 079,181 387,1 003
+6,Hessen,60,63,Stadt,64380001001,6438001,"Dietzenbach, Kreisstadt",Magistrat der Stadt Dietzenbach,Europaplatz 1,63128,Dietzenbach,"21,68",34 517,17 196,17 321,1 592
+6,Hessen,60,63,Stadt,64380002002,6438002,"Dreieich, Stadt",Magistrat der Stadt Dreieich,Hauptstraße 45,63303,Dreieich,"53,27",41 811,20 534,21 277,785
+6,Hessen,60,64,Kreisangehörige Gemeinde,64380003003,6438003,Egelsbach,Gemeindevorstand der Gemeinde Egelsbach,Freiherr-vom-Stein-Straße 13,63329,Egelsbach,"14,81",11 414,5 664,5 750,771
+6,Hessen,60,64,Kreisangehörige Gemeinde,64380004004,6438004,Hainburg,Gemeindevorstand der Gemeinde Hainburg,Hauptstraße 44,63512,Hainburg,"15,94",14 299,6 849,7 450,897
+6,Hessen,60,63,Stadt,64380005005,6438005,"Heusenstamm, Stadt",Magistrat der Stadt Heusenstamm,Im Herrngarten 1,63150,Heusenstamm,"19,03",19 160,9 430,9 730,1 007
+6,Hessen,60,63,Stadt,64380006006,6438006,"Langen (Hessen), Stadt",Magistrat der Stadt Langen (Hessen),Südliche Ringstraße 80,63225,Langen (Hessen),"29,12",38 651,19 077,19 574,1 327
+6,Hessen,60,64,Kreisangehörige Gemeinde,64380007007,6438007,Mainhausen,Gemeindevorstand der Gemeinde Mainhausen,Rheinstraße 3,63533,Mainhausen,"17,92",9 659,4 784,4 875,539
+6,Hessen,60,63,Stadt,64380008008,6438008,"Mühlheim am Main, Stadt",Magistrat der Stadt Mühlheim am Main,Friedensstraße 20,63165,Mühlheim am Main,"20,67",28 902,14 405,14 497,1 398
+6,Hessen,60,63,Stadt,64380009009,6438009,"Neu-Isenburg, Stadt",Magistrat der Stadt Neu-Isenburg,Hugenottenallee 53,63263,Neu-Isenburg,"24,29",38 532,18 922,19 610,1 586
+6,Hessen,60,63,Stadt,64380010010,6438010,"Obertshausen, Stadt",Magistrat der Stadt Obertshausen,Schubertstraße 11,63179,Obertshausen,"13,62",24 968,12 260,12 708,1 833
+6,Hessen,60,63,Stadt,64380011011,6438011,"Rodgau, Stadt",Magistrat der Stadt Rodgau,Hintergasse 15,63110,Rodgau,"65,04",45 847,22 790,23 057,705
+6,Hessen,60,63,Stadt,64380012012,6438012,"Rödermark, Stadt",Magistrat der Stadt Rödermark,Dieburger Straße 13 - 17,63322,Rödermark,"29,99",28 361,13 871,14 490,946
+6,Hessen,60,63,Stadt,64380013013,6438013,"Seligenstadt, Einhardstadt",Magistrat der Stadt Seligenstadt,Marktplatz 1,63500,Seligenstadt,"30,85",21 345,10 297,11 048,692
+6,Hessen,40,44,Landkreis,6439,,Rheingau-Taunus-Kreis,Kreisausschuss des Rheingau-Taunus-Kreises,Heimbacher Straße 7,65307,Bad Schwalbach,"811,41",187 229,91 919,95 310,231
+6,Hessen,60,64,Kreisangehörige Gemeinde,64390001001,6439001,Aarbergen,Gemeindevorstand der Gemeinde Aarbergen,Scheidertalstraße 1,65326,Aarbergen,"33,97",6 327,3 112,3 215,186
+6,Hessen,60,63,Stadt,64390002002,6439002,"Bad Schwalbach, Kreisstadt",Magistrat der Stadt Bad Schwalbach,Adolfstraße 38,65307,Bad Schwalbach,"40,27",11 277,5 597,5 680,280
+6,Hessen,60,63,Stadt,64390003003,6439003,"Eltville am Rhein, Stadt",Magistrat der Stadt Eltville am Rhein,Gutenbergstraße 13,65343,Eltville am Rhein,"46,77",16 911,8 213,8 698,362
+6,Hessen,60,63,Stadt,64390004004,6439004,"Geisenheim, Hochschulstadt",Magistrat der Stadt Geisenheim,Rüdesheimer Straße 48,65366,Geisenheim,"40,34",11 515,5 626,5 889,285
+6,Hessen,60,64,Kreisangehörige Gemeinde,64390005005,6439005,Heidenrod,Gemeindevorstand der Gemeinde Heidenrod,Rathausstraße 9,65321,Heidenrod,"95,93",7 834,3 898,3 936,82
+6,Hessen,60,64,Kreisangehörige Gemeinde,64390006006,6439006,Hohenstein,Gemeindevorstand der Gemeinde Hohenstein,Schwalbacher Straße 1,65329,Hohenstein,"63,86",6 135,3 077,3 058,96
+6,Hessen,60,64,Kreisangehörige Gemeinde,64390007007,6439007,Hünstetten,Gemeindevorstand der Gemeinde Hünstetten,Im Lagersboden 5,65510,Hünstetten,"50,58",10 455,5 161,5 294,207
+6,Hessen,60,63,Stadt,64390008008,6439008,"Idstein, Hochschulstadt",Magistrat der Stadt Idstein,König-Adolf-Platz 2,65510,Idstein,"79,76",25 234,12 090,13 144,316
+6,Hessen,60,64,Kreisangehörige Gemeinde,64390009009,6439009,Kiedrich,Gemeindevorstand der Gemeinde Kiedrich,Marktstraße 27,65399,Kiedrich,"12,34",4 032,1 995,2 037,327
+6,Hessen,60,63,Stadt,64390010010,6439010,"Lorch, Stadt",Magistrat der Stadt Lorch,Markt 5,65391,Lorch,"54,43",3 875,1 938,1 937,71
+6,Hessen,60,64,Kreisangehörige Gemeinde,64390011011,6439011,Niedernhausen,Gemeindevorstand der Gemeinde Niedernhausen,Wilrijkplatz,65527,Niedernhausen,"35,29",14 738,7 325,7 413,418
+6,Hessen,60,63,Stadt,64390012012,6439012,"Oestrich-Winkel, Stadt",Magistrat der Stadt Oestrich-Winkel,Paul-Gerhardt-Weg 1,65375,Oestrich-Winkel,"59,51",11 723,5 714,6 009,197
+6,Hessen,60,63,Stadt,64390013013,6439013,"Rüdesheim am Rhein, Stadt",Magistrat der Stadt Rüdesheim am Rhein,Markt 16,65385,Rüdesheim am Rhein,"51,41",9 921,4 955,4 966,193
+6,Hessen,60,64,Kreisangehörige Gemeinde,64390014014,6439014,Schlangenbad,Gemeindevorstand der Gemeinde Schlangenbad,Rheingauer Straße 23,65388,Schlangenbad,"36,51",6 482,3 318,3 164,178
+6,Hessen,60,63,Stadt,64390015015,6439015,"Taunusstein, Stadt",Magistrat der Stadt Taunusstein,Aarstraße 150,65232,Taunusstein,"67,02",30 221,14 749,15 472,451
+6,Hessen,60,64,Kreisangehörige Gemeinde,64390016016,6439016,Waldems,Gemeindevorstand der Gemeinde Waldems,Schulgasse 2,65529,Waldems,"36,68",5 102,2 525,2 577,139
+6,Hessen,60,64,Kreisangehörige Gemeinde,64390017017,6439017,Walluf,Gemeindevorstand der Gemeinde Walluf,Mühlstraße 40,65396,Walluf,"6,75",5 447,2 626,2 821,807
+6,Hessen,40,44,Landkreis,6440,,Wetteraukreis,Kreisausschuss des Wetteraukreises,Europaplatz / Gebäude B,61169,Friedberg (Hessen),"1100,66",311 661,154 192,157 469,283
+6,Hessen,60,64,Kreisangehörige Gemeinde,64400001001,6440001,Altenstadt,Gemeindevorstand der Gemeinde Altenstadt,Frankfurter Straße 11,63674,Altenstadt,"30,09",12 437,6 188,6 249,413
+6,Hessen,60,63,Stadt,64400002002,6440002,"Bad Nauheim, Stadt",Magistrat der Stadt Bad Nauheim,Parkstraße 36-38,61231,Bad Nauheim,"32,54",32 777,15 496,17 281,1 007
+6,Hessen,60,63,Stadt,64400003003,6440003,"Bad Vilbel, Stadt",Magistrat der Stadt Bad Vilbel,Am Sonnenplatz 1,61118,Bad Vilbel,"25,68",34 905,16 927,17 978,1 359
+6,Hessen,60,63,Stadt,64400004004,6440004,"Büdingen, Stadt",Magistrat der Stadt Büdingen,Eberhard-Bauner-Allee 16,63654,Büdingen,"122,88",22 831,11 564,11 267,186
+6,Hessen,60,63,Stadt,64400005005,6440005,"Butzbach, Friedrich-Ludwig-Weidig-Stadt",Magistrat der Stadt Butzbach,Marktplatz 1,35510,Butzbach,"106,60",26 660,13 365,13 295,250
+6,Hessen,60,64,Kreisangehörige Gemeinde,64400006006,6440006,Echzell,Gemeindevorstand der Gemeinde Echzell,Lindenstraße 9,61209,Echzell,"37,65",5 768,2 871,2 897,153
+6,Hessen,60,63,Stadt,64400007007,6440007,"Florstadt, Stadt",Magistrat der Stadt Florstadt,Freiherr-vom-Stein-Straße 1,61197,Florstadt,"39,60",8 798,4 356,4 442,222
+6,Hessen,60,63,Stadt,64400008008,6440008,"Friedberg (Hessen), Kreisstadt",Magistrat der Stadt Friedberg (Hessen),Mainzer-Tor-Anlage 6,61169,Friedberg (Hessen),"50,18",29 674,14 806,14 868,591
+6,Hessen,60,63,Stadt,64400009009,6440009,"Gedern, Stadt",Magistrat der Stadt Gedern,Schlossberg 7,63688,Gedern,"75,24",7 165,3 599,3 566,95
+6,Hessen,60,64,Kreisangehörige Gemeinde,64400010010,6440010,Glauburg,Gemeindevorstand der Gemeinde Glauburg,Bahnhofstraße 34,63695,Glauburg,"12,67",3 081,1 518,1 563,243
+6,Hessen,60,64,Kreisangehörige Gemeinde,64400011011,6440011,Hirzenhain,Gemeindevorstand der Gemeinde Hirzenhain,Karl-Birx-Straße 6,63697,Hirzenhain,"16,11",2 897,1 440,1 457,180
+6,Hessen,60,63,Stadt,64400012012,6440012,"Karben, Stadt",Magistrat der Stadt Karben,Rathausplatz 1,61184,Karben,"43,94",22 843,11 345,11 498,520
+6,Hessen,60,64,Kreisangehörige Gemeinde,64400013013,6440013,Kefenrod,Gemeindevorstand der Gemeinde Kefenrod,Hitzkirchener Straße 19,63699,Kefenrod,"30,67",2 683,1 341,1 342,87
+6,Hessen,60,64,Kreisangehörige Gemeinde,64400014014,6440014,Limeshain,Gemeindevorstand der Gemeinde Limeshain,Am Zentrum 2,63694,Limeshain,"12,50",5 742,2 838,2 904,459
+6,Hessen,60,63,Stadt,64400015015,6440015,"Münzenberg, Stadt",Magistrat der Stadt Münzenberg,Hauptstraße 22,35516,Münzenberg,"31,63",5 770,2 824,2 946,182
+6,Hessen,60,63,Stadt,64400016016,6440016,"Nidda, Stadt",Magistrat der Stadt Nidda,Wilhelm-Eckhardt-Platz,63667,Nidda,"118,33",17 314,8 716,8 598,146
+6,Hessen,60,63,Stadt,64400017017,6440017,"Niddatal, Stadt",Magistrat der Stadt Niddatal,Hauptstraße 2,61194,Niddatal,"40,25",9 925,4 940,4 985,247
+6,Hessen,60,64,Kreisangehörige Gemeinde,64400018018,6440018,Ober-Mörlen,Gemeindevorstand der Gemeinde Ober-Mörlen,Frankfurter Straße 31,61239,Ober-Mörlen,"37,65",5 781,2 846,2 935,154
+6,Hessen,60,63,Stadt,64400019019,6440019,"Ortenberg, Stadt",Magistrat der Stadt Ortenberg,Lauterbacher Straße 2,63683,Ortenberg,"54,70",8 892,4 423,4 469,163
+6,Hessen,60,64,Kreisangehörige Gemeinde,64400020020,6440020,Ranstadt,Gemeindevorstand der Gemeinde Ranstadt,Hauptstraße 15,63691,Ranstadt,"34,26",5 217,2 592,2 625,152
+6,Hessen,60,63,Stadt,64400021021,6440021,"Reichelsheim (Wetterau), Stadt",Magistrat der Stadt Reichelsheim (Wetterau),Zum Rathaus 1,61203,Reichelsheim (Wetterau),"27,56",6 853,3 412,3 441,249
+6,Hessen,60,64,Kreisangehörige Gemeinde,64400022022,6440022,Rockenberg,Gemeindevorstand der Gemeinde Rockenberg,Obergasse 12,35519,Rockenberg,"16,14",4 455,2 317,2 138,276
+6,Hessen,60,63,Stadt,64400023023,6440023,"Rosbach v. d. Höhe, Stadt",Magistrat der Stadt Rosbach v. d. Höhe,Homburger Straße 64,61191,Rosbach v. d. Höhe,"45,33",12 838,6 322,6 516,283
+6,Hessen,60,64,Kreisangehörige Gemeinde,64400024024,6440024,Wölfersheim,Gemeindevorstand der Gemeinde Wölfersheim,Hauptstraße 60,61200,Wölfersheim,"43,11",9 745,4 842,4 903,226
+6,Hessen,60,64,Kreisangehörige Gemeinde,64400025025,6440025,Wöllstadt,Gemeindevorstand der Gemeinde Wöllstadt,Paul-Hallmann-Straße 3,61206,Wöllstadt,"15,38",6 610,3 304,3 306,430
+6,Hessen,20,,,65,,Reg.-Bez. Gießen,Regierungspräsidium Gießen,Landgraf-Philipp-Platz 1-7,35390,Gießen,"5380,59",1 050 765,519 053,531 712,195
+6,Hessen,40,44,Landkreis,6531,,Gießen,Kreisausschuss des Lkr. Gießen,Riversplatz 1 - 9,35394,Gießen,"854,56",272 874,134 692,138 182,319
+6,Hessen,60,63,Stadt,65310001001,6531001,"Allendorf (Lumda), Stadt",Magistrat der Stadt Allendorf (Lumda),Bahnhofstraße 14,35469,Allendorf (Lumda),"22,05",4 060,2 058,2 002,184
+6,Hessen,60,64,Kreisangehörige Gemeinde,65310002002,6531002,Biebertal,Gemeindevorstand der Gemeinde Biebertal,Mühlbergstraße 9,35444,Biebertal,"43,94",9 978,4 908,5 070,227
+6,Hessen,60,64,Kreisangehörige Gemeinde,65310003003,6531003,Buseck,Gemeindevorstand der Gemeinde Buseck,Ernst-Ludwig-Straße 15,35418,Buseck,"38,61",13 062,6 398,6 664,338
+6,Hessen,60,64,Kreisangehörige Gemeinde,65310004004,6531004,Fernwald,Gemeindevorstand der Gemeinde Fernwald,Oppenröder Straße 1,35463,Fernwald,"21,57",7 048,3 521,3 527,327
+6,Hessen,60,63,Stadt,65310005005,6531005,"Gießen, Universitätsstadt",Magistrat der Stadt Gießen,Berliner Platz 1,35390,Gießen,"72,61",91 255,45 178,46 077,1 257
+6,Hessen,60,63,Stadt,65310006006,6531006,"Grünberg, Stadt",Magistrat der Stadt Grünberg,Rabegasse 1,35305,Grünberg,"89,22",13 694,6 726,6 968,153
+6,Hessen,60,64,Kreisangehörige Gemeinde,65310007007,6531007,Heuchelheim a. d. Lahn,Gemeindevorstand der Gemeinde Heuchelheim,Am Zimmerplatz 3,35452,Heuchelheim,"10,58",7 897,3 905,3 992,746
+6,Hessen,60,63,Stadt,65310008008,6531008,"Hungen, Stadt",Magistrat der Stadt Hungen,Kaiserstraße 7,35410,Hungen,"86,78",12 765,6 292,6 473,147
+6,Hessen,60,64,Kreisangehörige Gemeinde,65310009009,6531009,Langgöns,Gemeindevorstand der Gemeinde Langgöns,St.-Ulrich-Ring 13,35428,Langgöns,"52,53",11 683,5 776,5 907,222
+6,Hessen,60,63,Stadt,65310010010,6531010,"Laubach, Stadt",Magistrat der Stadt Laubach,Friedrichstraße 11,35321,Laubach,"97,01",9 569,4 654,4 915,99
+6,Hessen,60,63,Stadt,65310011011,6531011,"Lich, Stadt",Magistrat der Stadt Lich,Unterstadt 1,35423,Lich,"77,61",13 938,6 821,7 117,180
+6,Hessen,60,63,Stadt,65310012012,6531012,"Linden, Stadt",Magistrat der Stadt Linden,Konrad-Adenauer-Straße 25,35440,Linden,"22,77",13 300,6 692,6 608,584
+6,Hessen,60,63,Stadt,65310013013,6531013,"Lollar, Stadt",Magistrat der Stadt Lollar,Holzmühler Weg 76,35457,Lollar,"21,39",10 315,5 110,5 205,482
+6,Hessen,60,63,Stadt,65310014014,6531014,"Pohlheim, Stadt",Magistrat der Stadt Pohlheim,Ludwigstraße 31,35415,Pohlheim,"38,00",17 872,8 780,9 092,470
+6,Hessen,60,64,Kreisangehörige Gemeinde,65310015015,6531015,Rabenau,Gemeindevorstand der Gemeinde Rabenau,Eichweg 14,35466,Rabenau,"43,40",5 053,2 535,2 518,116
+6,Hessen,60,64,Kreisangehörige Gemeinde,65310016016,6531016,Reiskirchen,Gemeindevorstand der Gemeinde Reiskirchen,Schulstraße 17,35447,Reiskirchen,"44,99",10 310,5 056,5 254,229
+6,Hessen,60,63,Stadt,65310017017,6531017,"Staufenberg, Stadt",Magistrat der Stadt Staufenberg,Tarjanplatz 1,35460,Staufenberg,"28,58",8 436,4 190,4 246,295
+6,Hessen,60,64,Kreisangehörige Gemeinde,65310018018,6531018,Wettenberg,Gemeindevorstand der Gemeinde Wettenberg,Sorguesplatz 2,35435,Wettenberg,"42,92",12 639,6 092,6 547,294
+6,Hessen,40,44,Landkreis,6532,,Lahn-Dill-Kreis,Kreisausschuss des Lahn-Dill-Kreises,Karl-Kellner-Ring 51,35576,Wetzlar,"1066,30",253 364,124 887,128 477,238
+6,Hessen,60,63,Stadt,65320001001,6532001,"Aßlar, Stadt",Magistrat der Stadt Aßlar,Mühlgrabenstraße 1,35614,Aßlar,"43,57",13 725,6 783,6 942,315
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320002002,6532002,Bischoffen,Gemeindevorstand der Gemeinde Bischoffen,Schulstraße 23,35649,Bischoffen,"35,37",3 284,1 649,1 635,93
+6,Hessen,60,63,Stadt,65320003003,6532003,"Braunfels, Stadt",Magistrat der Stadt Braunfels,Hüttenweg 3,35619,Braunfels,"47,28",10 994,5 289,5 705,233
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320004004,6532004,Breitscheid,Gemeindevorstand der Gemeinde Breitscheid,Rathausstraße 14,35767,Breitscheid,"31,71",4 681,2 366,2 315,148
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320005005,6532005,Dietzhölztal,Gemeindevorstand der Gemeinde Dietzhölztal,Hauptstraße 92,35716,Dietzhölztal,"37,47",5 518,2 769,2 749,147
+6,Hessen,60,63,Stadt,65320006006,6532006,"Dillenburg, Oranienstadt",Magistrat der Stadt Dillenburg,Rathausstraße 7,35683,Dillenburg,"83,76",23 230,11 518,11 712,277
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320007007,6532007,Driedorf,Gemeindevorstand der Gemeinde Driedorf,Wilhelmstraße 16,35759,Driedorf,"47,56",5 062,2 556,2 506,106
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320008008,6532008,Ehringshausen,Gemeindevorstand der Gemeinde Ehringshausen,Rathausstraße 1,35630,Ehringshausen,"45,43",9 492,4 726,4 766,209
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320009009,6532009,Eschenburg,Gemeindevorstand der Gemeinde Eschenburg,Nassauer Straße 11,35713,Eschenburg,"45,78",9 891,4 954,4 937,216
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320010010,6532010,Greifenstein,Gemeindevorstand der Gemeinde Greifenstein,Herborner Straße 38,35753,Greifenstein,"67,40",6 546,3 221,3 325,97
+6,Hessen,60,63,Stadt,65320011011,6532011,"Haiger, Stadt",Magistrat der Stadt Haiger,Marktplatz 7,35708,Haiger,"106,73",19 321,9 585,9 736,181
+6,Hessen,60,63,Stadt,65320012012,6532012,"Herborn, Stadt",Magistrat der Stadt Herborn,Hauptstraße 39,35745,Herborn,"63,76",20 520,10 101,10 419,322
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320013013,6532013,Hohenahr,Gemeindevorstand der Gemeinde Hohenahr,Rathausplatz 6,35644,Hohenahr,"45,71",4 811,2 476,2 335,105
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320014014,6532014,Hüttenberg,Gemeindevorstand der Gemeinde Hüttenberg,Frankfurter Straße 49-51,35625,Hüttenberg,"40,74",10 794,5 258,5 536,265
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320015015,6532015,Lahnau,Gemeindevorstand der Gemeinde Lahnau,Rathausplatz 1- 5,35633,Lahnau,"23,94",8 211,4 031,4 180,343
+6,Hessen,60,63,Stadt,65320016016,6532016,"Leun, Stadt",Magistrat der Stadt Leun,Bahnhofstraße 25,35638,Leun,"28,66",5 716,2 860,2 856,199
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320017017,6532017,Mittenaar,Gemeindevorstand der Gemeinde Mittenaar,Leipziger Straße 1,35756,Mittenaar,"35,14",4 704,2 339,2 365,134
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320018018,6532018,Schöffengrund,Gemeindevorstand der Gemeinde Schöffengrund,Neukirchener Straße 5,35641,Schöffengrund,"34,11",6 492,3 158,3 334,190
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320019019,6532019,Siegbach,Gemeindevorstand der Gemeinde Siegbach,Austraße 23,35768,Siegbach,"29,03",2 506,1 254,1 252,86
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320020020,6532020,Sinn,Gemeindevorstand der Gemeinde Sinn,Jordanstraße 2,35764,Sinn,"18,73",6 442,3 182,3 260,344
+6,Hessen,60,63,Stadt,65320021021,6532021,"Solms, Stadt",Magistrat der Stadt Solms,Oberndorfer Straße 20,35606,Solms,"34,02",13 670,6 793,6 877,402
+6,Hessen,60,64,Kreisangehörige Gemeinde,65320022022,6532022,Waldsolms,Gemeindevorstand der Gemeinde Waldsolms,Lindenplatz 2,35647,Waldsolms,"44,75",4 785,2 360,2 425,107
+6,Hessen,60,63,Stadt,65320023023,6532023,"Wetzlar, Stadt",Magistrat der Stadt Wetzlar,Ernst-Leitz-Straße 30,35578,Wetzlar,"75,65",52 969,25 659,27 310,700
+6,Hessen,40,44,Landkreis,6533,,Limburg-Weilburg,Kreisausschuss des Lkr. Limburg-Weilburg,Schiede 43,65549,Limburg a. d. Lahn,"738,44",172 759,85 786,86 973,234
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330001001,6533001,Beselich,Gemeindevorstand der Gemeinde Beselich,Steinbacher Straße 10,65614,Beselich,"31,54",5 717,2 868,2 849,181
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330002002,6533002,Brechen,Gemeindevorstand der Gemeinde Brechen,Marktstraße 1,65611,Brechen,"24,86",6 428,3 174,3 254,259
+6,Hessen,60,63,Stadt,65330003003,6533003,"Bad Camberg, Stadt",Magistrat der Stadt Bad Camberg,Am Amthof 15,65520,Bad Camberg,"54,60",14 158,6 941,7 217,259
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330004004,6533004,Dornburg,Gemeindevorstand der Gemeinde Dornburg,Egenolfstraße 26,65599,Dornburg,"33,23",8 567,4 212,4 355,258
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330005005,6533005,Elbtal,Gemeindevorstand der Gemeinde Elbtal,Rathausstraße 1,65627,Elbtal,"11,11",2 394,1 189,1 205,215
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330006006,6533006,Elz,Gemeindevorstand der Gemeinde Elz,Rathausstraße 39,65604,Elz,"16,86",7 896,3 863,4 033,468
+6,Hessen,60,63,Stadt,65330007007,6533007,"Hadamar, Stadt",Magistrat der Stadt Hadamar,Untermarkt 1,65589,Hadamar,"40,99",12 836,6 542,6 294,313
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330008008,6533008,Hünfelden,Gemeindevorstand der Gemeinde Hünfelden,Le Thillay-Platz,65597,Hünfelden,"62,69",9 717,4 822,4 895,155
+6,Hessen,60,63,Stadt,65330009009,6533009,"Limburg a. d. Lahn, Kreisstadt",Magistrat der Stadt Limburg a. d. Lahn,Über der Lahn 1,65549,Limburg a. d. Lahn,"45,16",35 783,17 578,18 205,792
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330010010,6533010,Löhnberg,Gemeindevorstand der Gemeinde Löhnberg,Obertorstraße 5,35792,Löhnberg,"33,84",4 616,2 256,2 360,136
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330011011,6533011,"Mengerskirchen, Marktflecken",Gemeindevorstand der Gemeinde Mengerskirchen,Schloßstraße 3,35794,Mengerskirchen,"30,82",5 650,2 816,2 834,183
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330012012,6533012,"Merenberg, Marktflecken",Gemeindevorstand der Gemeinde Merenberg,Allendorfer Straße 4,35799,Merenberg,"23,09",3 200,1 594,1 606,139
+6,Hessen,60,63,Stadt,65330013013,6533013,"Runkel, Stadt",Magistrat der Stadt Runkel,Burgstraße 4,65594,Runkel,"43,71",9 427,4 714,4 713,216
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330014014,6533014,Selters (Taunus),Gemeindevorstand der Gemeinde Selters (Taunus),Brunnenstraße 46,65618,Selters (Taunus),"40,47",7 886,4 019,3 867,195
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330015015,6533015,"Villmar, Marktflecken",Gemeindevorstand der Gemeinde Villmar,Peter-Paul-Straße 30,65606,Villmar,"43,10",6 699,3 358,3 341,155
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330016016,6533016,Waldbrunn (Westerwald),Gemeindevorstand der Gemeinde Waldbrunn (Westerwald),Hauser Kirchweg 4,65620,Waldbrunn (Westerwald),"29,77",5 784,2 911,2 873,194
+6,Hessen,60,63,Stadt,65330017017,6533017,"Weilburg, Stadt",Magistrat der Stadt Weilburg,Mauerstraße 6 - 8,35781,Weilburg,"57,51",12 939,6 469,6 470,225
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330018018,6533018,"Weilmünster, Marktflecken",Gemeindevorstand der Gemeinde Weilmünster,Rathausplatz 8,35789,Weilmünster,"77,42",8 787,4 340,4 447,113
+6,Hessen,60,64,Kreisangehörige Gemeinde,65330019019,6533019,Weinbach,Gemeindevorstand der Gemeinde Weinbach,Elkerhäuser Straße 17,35796,Weinbach,"37,67",4 275,2 120,2 155,113
+6,Hessen,40,44,Landkreis,6534,,Marburg-Biedenkopf,Kreisausschuss des Lkr. Marburg-Biedenkopf,Im Lichtenholz 60,35043,Marburg,"1262,37",246 097,120 944,125 153,195
+6,Hessen,60,63,Stadt,65340001001,6534001,"Amöneburg, Stadt",Magistrat der Stadt Amöneburg,Am Markt 1,35287,Amöneburg,"43,90",4 949,2 459,2 490,113
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340002002,6534002,Angelburg,Gemeindevorstand der Gemeinde Angelburg,Bahnhofstraße 1,35719,Angelburg,"16,73",3 406,1 775,1 631,204
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340003003,6534003,Bad Endbach,Gemeindevorstand der Gemeinde Bad Endbach,Herborner Straße 1,35080,Bad Endbach,"39,85",7 895,3 903,3 992,198
+6,Hessen,60,63,Stadt,65340004004,6534004,"Biedenkopf, Stadt",Magistrat der Stadt Biedenkopf,Hainstraße 63,35216,Biedenkopf,"90,31",13 361,6 664,6 697,148
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340005005,6534005,Breidenbach,Gemeindevorstand der Gemeinde Breidenbach,Bachstraße 4 - 14,35236,Breidenbach,"44,83",6 711,3 384,3 327,150
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340006006,6534006,Cölbe,Gemeindevorstand der Gemeinde Cölbe,Kasseler Straße 88,35091,Cölbe,"26,68",6 508,3 212,3 296,244
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340007007,6534007,Dautphetal,Gemeindevorstand der Gemeinde Dautphetal,Hainstraße 1,35232,Dautphetal,"72,02",11 319,5 617,5 702,157
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340008008,6534008,Ebsdorfergrund,Gemeindevorstand der Gemeinde Ebsdorfergrund,Dreihäuserstraße 17,35085,Ebsdorfergrund,"72,87",8 990,4 405,4 585,123
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340009009,6534009,Fronhausen,Gemeindevorstand der Gemeinde Fronhausen,Schulstraße 19,35112,Fronhausen,"27,87",4 118,2 009,2 109,148
+6,Hessen,60,63,Stadt,65340010010,6534010,"Gladenbach, Stadt",Magistrat der Stadt Gladenbach,Karl-Waldschmidt-Straße 3,35075,Gladenbach,"72,28",12 294,6 111,6 183,170
+6,Hessen,60,63,Stadt,65340011011,6534011,"Kirchhain, Stadt",Magistrat der Stadt Kirchhain,Am Markt 1,35274,Kirchhain,"90,95",16 246,8 003,8 243,179
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340012012,6534012,Lahntal,Gemeindevorstand der Gemeinde Lahntal,Oberdorfer Straße 1,35094,Lahntal,"40,50",7 042,3 501,3 541,174
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340013013,6534013,Lohra,Gemeindevorstand der Gemeinde Lohra,Heinrich-Naumann-Weg 2,35102,Lohra,"49,16",5 510,2 742,2 768,112
+6,Hessen,60,63,Stadt,65340014014,6534014,"Marburg, Universitätsstadt",Magistrat der Stadt Marburg,Markt 1,35037,Marburg,"123,91",76 571,36 389,40 182,618
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340015015,6534015,Münchhausen,Gemeindevorstand der Gemeinde Münchhausen,Marburger Straße 82,35117,Münchhausen,"41,54",3 267,1 638,1 629,79
+6,Hessen,60,63,Stadt,65340016016,6534016,"Neustadt (Hessen), Stadt",Magistrat der Stadt Neustadt (Hessen),Ritterstraße 5 - 9,35279,Neustadt (Hessen),"56,86",10 177,5 432,4 745,179
+6,Hessen,60,63,Stadt,65340017017,6534017,"Rauschenberg, Stadt",Magistrat der Stadt Rauschenberg,Schloßstraße 1,35282,Rauschenberg,"67,32",4 402,2 175,2 227,65
+6,Hessen,60,63,Stadt,65340018018,6534018,"Stadtallendorf, Stadt",Magistrat der Stadt Stadtallendorf,Bahnhofstraße 2,35260,Stadtallendorf,"78,24",21 121,10 438,10 683,270
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340019019,6534019,Steffenberg,Gemeindevorstand der Gemeinde Steffenberg,Bauhofstraße 1,35239,Steffenberg,"24,30",3 979,2 036,1 943,164
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340020020,6534020,Weimar (Lahn),Gemeindevorstand der Gemeinde Weimar (Lahn),Alte Bahnhofstraße 31,35096,Weimar (Lahn),"47,05",7 167,3 491,3 676,152
+6,Hessen,60,63,Stadt,65340021021,6534021,"Wetter (Hessen), Stadt",Magistrat der Stadt Wetter (Hessen),Marktplatz 1,35083,Wetter (Hessen),"104,53",8 940,4 477,4 463,86
+6,Hessen,60,64,Kreisangehörige Gemeinde,65340022022,6534022,Wohratal,Gemeindevorstand der Gemeinde Wohratal,Halsdorfer Straße 56,35288,Wohratal,"30,67",2 124,1 083,1 041,69
+6,Hessen,40,44,Landkreis,6535,,Vogelsbergkreis,Kreisausschuss des Vogelsbergkreises,Goldhelg 20,36341,Lauterbach,"1458,91",105 671,52 744,52 927,72
+6,Hessen,60,63,Stadt,65350001001,6535001,"Alsfeld, Stadt",Magistrat der Stadt Alsfeld,Markt 1,36304,Alsfeld,"129,71",15 945,7 873,8 072,123
+6,Hessen,60,64,Kreisangehörige Gemeinde,65350002002,6535002,Antrifttal,Gemeindevorstand der Gemeinde Antrifttal,Weihersweg 24,36326,Antrifttal,"26,59",1 801,894,907,68
+6,Hessen,60,64,Kreisangehörige Gemeinde,65350003003,6535003,Feldatal,Gemeindevorstand der Gemeinde Feldatal,Schulstraße 2,36325,Feldatal,"55,69",2 370,1 160,1 210,43
+6,Hessen,60,64,Kreisangehörige Gemeinde,65350004004,6535004,Freiensteinau,Gemeindevorstand der Gemeinde Freiensteinau,Alte Schulstraße 5,36399,Freiensteinau,"65,66",3 114,1 530,1 584,47
+6,Hessen,60,64,Kreisangehörige Gemeinde,65350005005,6535005,Gemünden (Felda),Gemeindevorstand der Gemeinde Gemünden (Felda),Rathausgasse 6,35329,Gemünden (Felda),"55,00",2 711,1 365,1 346,49
+6,Hessen,60,63,Stadt,65350006006,6535006,"Grebenau, Stadt",Magistrat der Stadt Grebenau,Amthof 2,36323,Grebenau,"55,34",2 342,1 174,1 168,42
+6,Hessen,60,64,Kreisangehörige Gemeinde,65350007007,6535007,Grebenhain,Gemeindevorstand der Gemeinde Grebenhain,Hauptstraße 51,36355,Grebenhain,"91,62",4 590,2 304,2 286,50
+6,Hessen,60,63,Stadt,65350008008,6535008,"Herbstein, Stadt",Magistrat der Stadt Herbstein,Marktplatz 7,36358,Herbstein,"79,98",4 665,2 402,2 263,58
+6,Hessen,60,63,Stadt,65350009009,6535009,"Homberg (Ohm), Stadt",Magistrat der Stadt Homberg (Ohm),Marktstraße 26,35315,Homberg (Ohm),"88,04",7 472,3 802,3 670,85
+6,Hessen,60,63,Stadt,65350010010,6535010,"Kirtorf, Stadt",Magistrat der Stadt Kirtorf,Neustädter Straße 10 - 12,36320,Kirtorf,"79,91",3 159,1 571,1 588,40
+6,Hessen,60,63,Stadt,65350011011,6535011,"Lauterbach (Hessen), Kreisstadt",Magistrat der Stadt Lauterbach (Hessen),Marktplatz 14,36341,Lauterbach (Hessen),"101,98",13 852,6 712,7 140,136
+6,Hessen,60,64,Kreisangehörige Gemeinde,65350012012,6535012,Lautertal (Vogelsberg),Gemeindevorstand der Gemeinde Lautertal (Vogelsberg),Rathausstraße 3,36369,Lautertal (Vogelsberg),"53,60",2 278,1 183,1 095,43
+6,Hessen,60,64,Kreisangehörige Gemeinde,65350013013,6535013,Mücke,Gemeindevorstand der Gemeinde Mücke,Im Herrnhain 2,35325,Mücke,"86,23",9 394,4 689,4 705,109
+6,Hessen,60,63,Stadt,65350014014,6535014,"Romrod, Stadt",Magistrat der Stadt Romrod,Jahnstraße 2,36329,Romrod,"54,43",2 669,1 296,1 373,49
+6,Hessen,60,63,Stadt,65350015015,6535015,"Schlitz, Stadt",Magistrat der Stadt Schlitz,An der Kirche 4,36110,Schlitz,"142,06",9 726,4 860,4 866,68
+6,Hessen,60,63,Stadt,65350016016,6535016,"Schotten, Stadt",Magistrat der Stadt Schotten,Vogelsbergstraße 184,63679,Schotten,"133,56",9 999,5 073,4 926,75
+6,Hessen,60,64,Kreisangehörige Gemeinde,65350017017,6535017,Schwalmtal,Gemeindevorstand der Gemeinde Schwalmtal,Alsfelder Straße 72,36318,Schwalmtal,"54,36",2 791,1 412,1 379,51
+6,Hessen,60,63,Stadt,65350018018,6535018,"Ulrichstein, Stadt",Magistrat der Stadt Ulrichstein,Marktstraße 28-32,35327,Ulrichstein,"65,61",2 926,1 485,1 441,45
+6,Hessen,60,64,Kreisangehörige Gemeinde,65350019019,6535019,Wartenberg,Gemeindevorstand der Gemeinde Wartenberg,Landenhäuser Straße 11,36367,Wartenberg,"39,54",3 867,1 959,1 908,98
+6,Hessen,20,,,66,,Reg.-Bez. Kassel,Regierungspräsidium Kassel,Am Alten Stadtschloss 1,34112,Kassel,"8290,79",1 217 688,604 187,613 501,147
+6,Hessen,40,41,Kreisfreie Stadt,6611,,"Kassel, documenta-Stadt",Magistrat der Stadt Kassel,Obere Königsstraße 8,34117,Kassel,"106,79",200 406,98 639,101 767,1 877
+6,Hessen,60,61,Kreisfreie Stadt,66110000000,6611000,"Kassel, documenta-Stadt",Magistrat der Stadt Kassel,Obere Königsstraße 8,34117,Kassel,"106,79",200 406,98 639,101 767,1 877
+6,Hessen,40,44,Landkreis,6631,,Fulda,Kreisausschuss des Lkr. Fulda,Wörthstraße 15,36037,Fulda,"1380,41",223 572,111 181,112 391,162
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310001001,6631001,Bad Salzschlirf,Gemeindevorstand der Gemeinde Bad Salzschlirf,Fuldaer Straße 2,36364,Bad Salzschlirf,"13,06",3 510,1 655,1 855,269
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310002002,6631002,"Burghaun, Marktgemeinde",Gemeindevorstand der Gemeinde Burghaun,Schloßstraße 15,36151,Burghaun,"65,04",6 356,3 173,3 183,98
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310003003,6631003,Dipperz,Gemeindevorstand der Gemeinde Dipperz,Am Dorfbrunnen 2,36160,Dipperz,"30,04",3 520,1 776,1 744,117
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310004004,6631004,Ebersburg,Gemeindevorstand der Gemeinde Ebersburg,Schulstraße 3,36157,Ebersburg,"37,05",4 647,2 369,2 278,125
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310005005,6631005,Ehrenberg (Rhön),Gemeindevorstand der Gemeinde Ehrenberg (Rhön),Rhönstraße 26,36115,Ehrenberg (Rhön),"40,84",2 539,1 292,1 247,62
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310006006,6631006,Eichenzell,Gemeindevorstand der Gemeinde Eichenzell,Schloßgasse 4,36124,Eichenzell,"55,99",11 145,5 643,5 502,199
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310007007,6631007,"Eiterfeld, Marktgemeinde",Gemeindevorstand der Gemeinde Eiterfeld,Fürstenecker Straße 2,36132,Eiterfeld,"89,83",7 049,3 507,3 542,78
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310008008,6631008,Flieden,Gemeindevorstand der Gemeinde Flieden,Hauptstraße 36,36103,Flieden,"49,65",8 575,4 341,4 234,173
+6,Hessen,60,63,Stadt,66310009009,6631009,"Fulda, Stadt",Magistrat der Stadt Fulda,Schloßstraße 1,36037,Fulda,"104,05",68 462,33 734,34 728,658
+6,Hessen,60,63,Stadt,66310010010,6631010,"Gersfeld (Rhön), Stadt",Magistrat der Stadt Gersfeld (Rhön),Marktplatz 19,36129,Gersfeld (Rhön),"89,34",5 436,2 711,2 725,61
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310011011,6631011,Großenlüder,Gemeindevorstand der Gemeinde Großenlüder,St.-Georg-Straße 2,36137,Großenlüder,"73,93",8 583,4 299,4 284,116
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310012012,6631012,"Hilders, Marktgemeinde",Gemeindevorstand der Gemeinde Hilders,Kirchstraße 2 - 6,36115,Hilders,"70,37",4 654,2 293,2 361,66
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310013013,6631013,Hofbieber,Gemeindevorstand der Gemeinde Hofbieber,Schulweg 5,36145,Hofbieber,"87,26",6 118,3 101,3 017,70
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310014014,6631014,Hosenfeld,Gemeindevorstand der Gemeinde Hosenfeld,Hainzeller Straße 1,36154,Hosenfeld,"50,73",4 554,2 270,2 284,90
+6,Hessen,60,63,Stadt,66310015015,6631015,"Hünfeld, Konrad-Zuse-Stadt",Magistrat der Stadt Hünfeld,Konrad-Adenauer-Platz 1,36088,Hünfeld,"119,75",16 748,8 443,8 305,140
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310016016,6631016,Kalbach,Gemeindevorstand der Gemeinde Kalbach,Hauptstraße 12,36148,Kalbach,"70,63",6 410,3 266,3 144,91
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310017017,6631017,Künzell,Gemeindevorstand der Gemeinde Künzell,Unterer Ortesweg 23,36093,Künzell,"30,28",16 829,8 173,8 656,556
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310018018,6631018,Neuhof,Gemeindevorstand der Gemeinde Neuhof,Lindenplatz 4,36119,Neuhof,"90,28",10 832,5 450,5 382,120
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310019019,6631019,Nüsttal,Gemeindevorstand der Gemeinde Nüsttal,Schulstraße 19,36167,Nüsttal,"45,49",2 891,1 508,1 383,64
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310020020,6631020,Petersberg,Gemeindevorstand der Gemeinde Petersberg,Rathausplatz 1,36100,Petersberg,"35,51",16 069,7 799,8 270,453
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310021021,6631021,Poppenhausen (Wasserkuppe),Gemeindevorstand der Gemeinde Poppenhausen (Wasserkuppe),Von-Steinrück-Platz 1,36163,Poppenhausen (Wasserkuppe),"40,77",2 695,1 352,1 343,66
+6,Hessen,60,64,Kreisangehörige Gemeinde,66310022022,6631022,"Rasdorf, Point-Alpha-Gemeinde",Gemeindevorstand der Gemeinde Rasdorf,Am Anger 32,36169,Rasdorf,"30,08",1 539,787,752,51
+6,Hessen,60,63,Stadt,66310023023,6631023,"Tann (Rhön), Stadt",Magistrat der Stadt Tann (Rhön),Marktplatz 9,36142,Tann (Rhön),"60,45",4 411,2 239,2 172,73
+6,Hessen,40,44,Landkreis,6632,,Hersfeld-Rotenburg,Kreisausschuss des Lkr. Hersfeld-Rotenburg,Friedloser Straße 12,36251,Bad Hersfeld,"1097,75",120 163,60 242,59 921,109
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320001001,6632001,Alheim,Gemeindevorstand der Gemeinde Alheim,Alheimer Straße 2,36211,Alheim,"63,84",4 833,2 459,2 374,76
+6,Hessen,60,63,Stadt,66320002002,6632002,"Bad Hersfeld, Kreisstadt",Magistrat der Stadt Bad Hersfeld,Weinstraße 16,36251,Bad Hersfeld,"73,87",30 101,14 763,15 338,407
+6,Hessen,60,63,Stadt,66320003003,6632003,"Bebra, Stadt",Magistrat der Stadt Bebra,Rathausmarkt 1,36179,Bebra,"93,71",13 972,6 978,6 994,149
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320004004,6632004,Breitenbach a. Herzberg,Gemeindevorstand der Gemeinde Breitenbach a. Herzberg,Machtloser Straße 5,36287,Breitenbach a. Herzberg,"42,43",1 653,909,744,39
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320005005,6632005,Cornberg,Gemeindevorstand der Gemeinde Cornberg,Am Markt 8,36219,Cornberg,"23,36",1 349,701,648,58
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320006006,6632006,Friedewald,Gemeindevorstand der Gemeinde Friedewald,Schlossplatz 2,36289,Friedewald,"39,64",2 457,1 271,1 186,62
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320007007,6632007,Hauneck,Gemeindevorstand der Gemeinde Hauneck,Hersfelder Straße 14,36282,Hauneck,"17,75",3 191,1 611,1 580,180
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320008008,6632008,Haunetal,Gemeindevorstand der Gemeinde Haunetal,Konrad-Zuse-Platz 6,36166,Haunetal,"54,94",2 939,1 536,1 403,53
+6,Hessen,60,63,Stadt,66320009009,6632009,"Heringen (Werra), Stadt",Magistrat der Stadt Heringen (Werra),Obere Goethestraße 17,36266,Heringen (Werra),"61,20",7 100,3 524,3 576,116
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320010010,6632010,Hohenroda,Gemeindevorstand der Gemeinde Hohenroda,Schloßstraße 45,36284,Hohenroda,"35,75",3 084,1 610,1 474,86
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320011011,6632011,Kirchheim,Gemeindevorstand der Gemeinde Kirchheim,Hauptstraße 20,36275,Kirchheim,"50,61",3 514,1 863,1 651,69
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320012012,6632012,Ludwigsau,Gemeindevorstand der Gemeinde Ludwigsau,Schulstraße 1,36251,Ludwigsau,"112,05",5 573,2 774,2 799,50
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320013013,6632013,Nentershausen,Gemeindevorstand der Gemeinde Nentershausen,Burgstraße 2,36214,Nentershausen,"57,05",2 541,1 263,1 278,45
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320014014,6632014,Neuenstein,Gemeindevorstand der Gemeinde Neuenstein,Freiherr-vom-Stein-Straße 5,36286,Neuenstein,"64,80",3 059,1 616,1 443,47
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320015015,6632015,"Niederaula, Marktgemeinde",Gemeindevorstand der Gemeinde Niederaula,Schlitzer Straße 3,36272,Niederaula,"64,16",5 255,2 654,2 601,82
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320016016,6632016,"Philippsthal (Werra), Marktgemeinde",Gemeindevorstand der Gemeinde Philippsthal (Werra),Schloss 1,36269,Philippsthal (Werra),"21,31",4 073,2 092,1 981,191
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320017017,6632017,Ronshausen,Gemeindevorstand der Gemeinde Ronshausen,Eisenacher Straße 12 a,36217,Ronshausen,"37,63",2 363,1 170,1 193,63
+6,Hessen,60,63,Stadt,66320018018,6632018,"Rotenburg a. d. Fulda, Stadt",Magistrat der Stadt Rotenburg a. d. Fulda,Marktplatz 15,36199,Rotenburg a. d. Fulda,"79,97",13 848,6 822,7 026,173
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320019019,6632019,Schenklengsfeld,Gemeindevorstand der Gemeinde Schenklengsfeld,Rathausstraße 2,36277,Schenklengsfeld,"63,75",4 303,2 162,2 141,67
+6,Hessen,60,64,Kreisangehörige Gemeinde,66320020020,6632020,Wildeck,Gemeindevorstand der Gemeinde Wildeck,Eisenacher Straße 98,36208,Wildeck,"39,93",4 955,2 464,2 491,124
+6,Hessen,40,44,Landkreis,6633,,Kassel,Kreisausschuss des Lkr. Kassel,Wilhelmshöher Allee 19 - 21,34117,Kassel,"1293,31",237 268,116 452,120 816,183
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330001001,6633001,Ahnatal,Gemeindevorstand der Gemeinde Ahnatal,Wilhelmsthaler Straße 3,34292,Ahnatal,"18,03",8 030,3 914,4 116,445
+6,Hessen,60,63,Stadt,66330002002,6633002,"Bad Karlshafen, Stadt",Magistrat der Stadt Bad Karlshafen,Hafenplatz 8,34385,Bad Karlshafen,"14,85",3 597,1 788,1 809,242
+6,Hessen,60,63,Stadt,66330003003,6633003,"Baunatal, Stadt",Magistrat der Stadt Baunatal,Marktplatz 14,34225,Baunatal,"38,27",27 906,13 440,14 466,729
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330004004,6633004,Breuna,Gemeindevorstand der Gemeinde Breuna,Volkmarser Straße 3,34479,Breuna,"40,50",3 556,1 812,1 744,88
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330005005,6633005,Calden,Gemeindevorstand der Gemeinde Calden,Holländische Straße 35,34379,Calden,"54,85",7 503,3 791,3 712,137
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330006006,6633006,Bad Emstal,Gemeindevorstand der Gemeinde Bad Emstal,Kasseler Straße 57,34308,Bad Emstal,"38,68",5 904,2 935,2 969,153
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330007007,6633007,Espenau,Gemeindevorstand der Gemeinde Espenau,Im Ort 1,34314,Espenau,"13,60",5 192,2 545,2 647,382
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330008008,6633008,Fuldabrück,Gemeindevorstand der Gemeinde Fuldabrück,Am Rathaus 2,34277,Fuldabrück,"17,86",8 719,4 235,4 484,488
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330009009,6633009,Fuldatal,Gemeindevorstand der Gemeinde Fuldatal,Am Rathaus 9,34233,Fuldatal,"33,67",12 467,6 107,6 360,370
+6,Hessen,60,63,Stadt,66330010010,6633010,"Grebenstein, Stadt",Magistrat der Stadt Grebenstein,Markt 1,34393,Grebenstein,"49,84",5 730,2 855,2 875,115
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330011011,6633011,Habichtswald,Gemeindevorstand der Gemeinde Habichtswald,Breiter Weg 4,34317,Habichtswald,"28,21",5 184,2 557,2 627,184
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330012012,6633012,Helsa,Gemeindevorstand der Gemeinde Helsa,Berliner Straße 20,34298,Helsa,"25,76",5 604,2 757,2 847,218
+6,Hessen,60,63,Stadt,66330013013,6633013,"Hofgeismar, Stadt",Magistrat der Stadt Hofgeismar,Markt 1,34369,Hofgeismar,"86,37",15 309,7 437,7 872,177
+6,Hessen,60,63,Stadt,66330014014,6633014,"Immenhausen, Stadt",Magistrat der Stadt Immenhausen,Marktplatz 1,34376,Immenhausen,"28,54",6 994,3 439,3 555,245
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330015015,6633015,Kaufungen,Gemeindevorstand der Gemeinde Kaufungen,Leipziger Straße 463,34260,Kaufungen,"26,15",12 629,6 139,6 490,483
+6,Hessen,60,63,Stadt,66330016016,6633016,"Liebenau, Stadt",Magistrat der Stadt Liebenau,Lacheweg 1,34396,Liebenau,"48,88",2 975,1 471,1 504,61
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330017017,6633017,Lohfelden,Gemeindevorstand der Gemeinde Lohfelden,Dr.-Walter-Lübcke-Platz 1,34253,Lohfelden,"16,58",14 252,7 040,7 212,860
+6,Hessen,60,63,Stadt,66330018018,6633018,"Naumburg, Stadt",Magistrat der Stadt Naumburg,Burgstraße 15,34311,Naumburg,"66,32",5 003,2 471,2 532,75
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330019019,6633019,Nieste,Gemeindevorstand der Gemeinde Nieste,Wilhelm-Heitmann-Platz 3,34329,Nieste,"4,06",2 040,1 019,1 021,502
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330020020,6633020,Niestetal,Gemeindevorstand der Gemeinde Niestetal,Dr.-Walter-Lübcke-Platz 1,34266,Niestetal,"22,16",11 365,5 551,5 814,513
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330022022,6633022,Reinhardshagen,Gemeindevorstand der Gemeinde Reinhardshagen,Amtsstraße 10,34359,Reinhardshagen,"12,99",4 336,2 156,2 180,334
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330023023,6633023,Schauenburg,Gemeindevorstand der Gemeinde Schauenburg,Korbacher Straße 300,34270,Schauenburg,"30,87",10 511,5 244,5 267,340
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330024024,6633024,Söhrewald,Gemeindevorstand der Gemeinde Söhrewald,Schulstraße 8,34320,Söhrewald,"58,96",4 608,2 299,2 309,78
+6,Hessen,60,63,Stadt,66330025025,6633025,"Trendelburg, Stadt",Magistrat der Stadt Trendelburg,Marktplatz 1,34388,Trendelburg,"69,37",4 826,2 400,2 426,70
+6,Hessen,60,63,Stadt,66330026026,6633026,"Vellmar, Stadt",Magistrat der Stadt Vellmar,Rathausplatz 1,34246,Vellmar,"13,97",18 166,8 622,9 544,1 300
+6,Hessen,60,63,Stadt,66330028028,6633028,"Wolfhagen, Hans-Staden-Stadt",Magistrat der Stadt Wolfhagen,Burgstraße 33 - 35,34466,Wolfhagen,"112,29",13 205,6 632,6 573,118
+6,Hessen,60,63,Stadt,66330029029,6633029,"Zierenberg, Stadt",Magistrat der Stadt Zierenberg,Poststraße 20,34289,Zierenberg,"86,55",6 520,3 246,3 274,75
+6,Hessen,60,64,Kreisangehörige Gemeinde,66330030030,6633030,Wesertal,Gemeindevorstand der Gemeinde Oberweser,Brückenstraße 1,34399,Wesertal,"52,65",5 137,2 550,2 587,98
+6,Hessen,40,44,Landkreis,6634,,Schwalm-Eder-Kreis,Kreisausschuss des Schwalm-Eder-Kreises,Parkstraße 6,34576,Homberg (Efze),"1539,01",180 052,90 256,89 796,117
+6,Hessen,60,63,Stadt,66340001001,6634001,"Borken (Hessen), Stadt",Magistrat der Stadt Borken (Hessen),Am Rathaus 7,34582,Borken (Hessen),"82,46",12 440,6 235,6 205,151
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340002002,6634002,Edermünde,Gemeindevorstand der Gemeinde Edermünde,Brückenhofstraße 4,34295,Edermünde,"25,85",7 367,3 675,3 692,285
+6,Hessen,60,63,Stadt,66340003003,6634003,"Felsberg, Stadt",Magistrat der Stadt Felsberg,Vernouillet-Allee 1,34587,Felsberg,"83,32",10 638,5 293,5 345,128
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340004004,6634004,"Frielendorf, Marktflecken",Gemeindevorstand der Gemeinde Frielendorf,Ziegenhainer Straße 2,34621,Frielendorf,"85,84",7 174,3 592,3 582,84
+6,Hessen,60,63,Stadt,66340005005,6634005,"Fritzlar, Dom- und Kaiserstadt",Magistrat der Stadt Fritzlar,Zwischen den Krämen 7,34560,Fritzlar,"88,81",14 780,7 285,7 495,166
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340006006,6634006,Gilserberg,Gemeindevorstand der Gemeinde Gilserberg,Bahnhofstraße 40,34630,Gilserberg,"61,55",2 932,1 496,1 436,48
+6,Hessen,60,63,Stadt,66340007007,6634007,"Gudensberg, Stadt",Magistrat der Stadt Gudensberg,Kasseler Straße 2,34281,Gudensberg,"46,49",9 815,4 891,4 924,211
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340008008,6634008,Guxhagen,Gemeindevorstand der Gemeinde Guxhagen,Zum Ehrenhain 2,34302,Guxhagen,"26,19",5 457,2 716,2 741,208
+6,Hessen,60,63,Stadt,66340009009,6634009,"Homberg (Efze), Reformationsstadt, Kreisstadt",Magistrat der Stadt Homberg (Efze),Rathausgasse 1,34576,Homberg (Efze),"100,11",13 970,6 960,7 010,140
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340010010,6634010,Jesberg,Gemeindevorstand der Gemeinde Jesberg,Frankfurter Straße 1,34632,Jesberg,"49,79",2 197,1 117,1 080,44
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340011011,6634011,Knüllwald,Gemeindevorstand der Gemeinde Knüllwald,Hauptstraße 7,34593,Knüllwald,"100,67",4 364,2 223,2 141,43
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340012012,6634012,Körle,Gemeindevorstand der Gemeinde Körle,Im Mülmischtal 2,34327,Körle,"17,51",3 039,1 533,1 506,174
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340013013,6634013,Malsfeld,Gemeindevorstand der Gemeinde Malsfeld,Lindenstraße 1,34323,Malsfeld,"34,52",3 870,1 942,1 928,112
+6,Hessen,60,63,Stadt,66340014014,6634014,"Melsungen, Stadt",Magistrat der Stadt Melsungen,Am Markt 1,34212,Melsungen,"63,09",13 695,6 794,6 901,217
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340015015,6634015,Morschen,Gemeindevorstand der Gemeinde Morschen,Paul-Frankfurth-Straße 11,34326,Morschen,"47,92",3 159,1 587,1 572,66
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340016016,6634016,Neuental,Gemeindevorstand der Gemeinde Neuental,Hauptstraße 8,34599,Neuental,"38,67",3 000,1 501,1 499,78
+6,Hessen,60,63,Stadt,66340017017,6634017,"Neukirchen, Stadt",Magistrat der Stadt Neukirchen,Am Rathaus 10,34626,Neukirchen,"66,25",6 906,3 462,3 444,104
+6,Hessen,60,63,Stadt,66340018018,6634018,"Niedenstein, Stadt",Magistrat der Stadt Niedenstein,Obertor 8,34305,Niedenstein,"30,61",5 457,2 753,2 704,178
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340019019,6634019,Oberaula,Gemeindevorstand der Gemeinde Oberaula,Hersfelder Straße 4,36280,Oberaula,"44,01",3 228,1 651,1 577,73
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340020020,6634020,Ottrau,Gemeindevorstand der Gemeinde Ottrau,Neukirchener Straße 1,34633,Ottrau,"48,50",2 135,1 074,1 061,44
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340021021,6634021,Schrecksbach,Gemeindevorstand der Gemeinde Schrecksbach,Immichenhainer Straße 1,34637,Schrecksbach,"36,61",2 949,1 467,1 482,81
+6,Hessen,60,63,Stadt,66340022022,6634022,"Schwalmstadt, Konfirmationsstadt",Magistrat der Stadt Schwalmstadt,Marktplatz 1,34613,Schwalmstadt,"84,79",18 195,9 228,8 967,215
+6,Hessen,60,63,Stadt,66340023023,6634023,"Schwarzenborn, Stadt",Magistrat der Stadt Schwarzenborn,Marktplatz 1,34639,Schwarzenborn,"26,90",1 289,735,554,48
+6,Hessen,60,63,Stadt,66340024024,6634024,"Spangenberg, Liebenbachstadt",Magistrat der Stadt Spangenberg,Marktplatz 1,34286,Spangenberg,"97,71",6 038,3 064,2 974,62
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340025025,6634025,Wabern,Gemeindevorstand der Gemeinde Wabern,Landgrafenstraße 9,34590,Wabern,"51,41",7 375,3 718,3 657,143
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340026026,6634026,Willingshausen,Gemeindevorstand der Gemeinde Willingshausen,Am Rathaus 2,34628,Willingshausen,"59,97",4 760,2 395,2 365,79
+6,Hessen,60,64,Kreisangehörige Gemeinde,66340027027,6634027,Bad Zwesten,Gemeindevorstand der Gemeinde Bad Zwesten,Ringstraße 1,34596,Bad Zwesten,"39,45",3 823,1 869,1 954,97
+6,Hessen,40,44,Landkreis,6635,,Waldeck-Frankenberg,Kreisausschuss des Lkr. Waldeck-Frankenberg,Südring 2,34497,Korbach,"1848,70",156 513,78 038,78 475,85
+6,Hessen,60,64,Kreisangehörige Gemeinde,66350001001,6635001,Allendorf (Eder),Gemeindevorstand der Gemeinde Allendorf (Eder),Schulstraße 5,35108,Allendorf (Eder),"77,01",7 517,3 773,3 744,98
+6,Hessen,60,63,Stadt,66350002002,6635002,"Bad Arolsen, Stadt",Magistrat der Stadt Bad Arolsen,Große Allee 26,34454,Bad Arolsen,"126,47",15 825,7 935,7 890,125
+6,Hessen,60,63,Stadt,66350003003,6635003,"Bad Wildungen, Stadt",Magistrat der Stadt Bad Wildungen,Am Markt 1,34537,Bad Wildungen,"120,10",17 231,8 472,8 759,143
+6,Hessen,60,63,Stadt,66350004004,6635004,"Battenberg (Eder), Stadt",Magistrat der Stadt Battenberg (Eder),Hauptstraße 58,35088,Battenberg (Eder),"64,71",5 427,2 744,2 683,84
+6,Hessen,60,64,Kreisangehörige Gemeinde,66350006006,6635006,Burgwald,Gemeindevorstand der Gemeinde Burgwald,Hauptstraße 73,35099,Burgwald,"41,30",4 926,2 461,2 465,119
+6,Hessen,60,64,Kreisangehörige Gemeinde,66350007007,6635007,Diemelsee,Gemeindevorstand der Gemeinde Diemelsee,Am Kahlenberg 1,34519,Diemelsee,"121,59",4 623,2 331,2 292,38
+6,Hessen,60,63,Stadt,66350008008,6635008,"Diemelstadt, Stadt",Magistrat der Stadt Diemelstadt,Lange Straße 6,34474,Diemelstadt,"82,55",5 196,2 597,2 599,63
+6,Hessen,60,64,Kreisangehörige Gemeinde,66350009009,6635009,"Edertal, Nationalparkgemeinde",Gemeindevorstand der Gemeinde Edertal,Bahnhofstraße 25,34549,Edertal,"115,65",6 211,3 043,3 168,54
+6,Hessen,60,63,Stadt,66350010010,6635010,"Frankenau, Nationalparkstadt",Magistrat der Stadt Frankenau,Ehlingshäuser Straße 1,35110,Frankenau,"57,29",2 852,1 411,1 441,50
+6,Hessen,60,63,Stadt,66350011011,6635011,"Frankenberg (Eder), Philipp-Soldan-Stadt",Magistrat der Stadt Frankenberg (Eder),Obermarkt 7 - 13,35066,Frankenberg (Eder),"124,86",17 739,8 894,8 845,142
+6,Hessen,60,63,Stadt,66350012012,6635012,"Gemünden (Wohra), Stadt",Magistrat der Stadt Gemünden (Wohra),Marktstraße 10,35285,Gemünden (Wohra),"58,65",3 829,1 918,1 911,65
+6,Hessen,60,64,Kreisangehörige Gemeinde,66350013013,6635013,Haina (Kloster),Gemeindevorstand der Gemeinde Haina (Kloster),Poststraße 4,35114,Haina (Kloster),"91,22",3 372,1 769,1 603,37
+6,Hessen,60,63,Stadt,66350014014,6635014,"Hatzfeld (Eder), Stadt",Magistrat der Stadt Hatzfeld (Eder),Im Hain 1,35116,Hatzfeld (Eder),"58,51",2 926,1 483,1 443,50
+6,Hessen,60,63,Stadt,66350015015,6635015,"Korbach, Hansestadt, Kreisstadt",Magistrat der Stadt Korbach,Frankenberger Landstraße 8a,34497,Korbach,"124,11",23 287,11 384,11 903,188
+6,Hessen,60,63,Stadt,66350016016,6635016,"Lichtenfels, Stadt",Magistrat der Stadt Lichtenfels,Aarweg 10,35104,Lichtenfels,"96,77",4 131,2 097,2 034,43
+6,Hessen,60,63,Stadt,66350017017,6635017,"Rosenthal, Stadt",Magistrat der Stadt Rosenthal,Am Rathaus 2,35119,Rosenthal,"51,55",2 148,1 086,1 062,42
+6,Hessen,60,64,Kreisangehörige Gemeinde,66350018018,6635018,Twistetal,Gemeindevorstand der Gemeinde Twistetal,Hüfte 7,34477,Twistetal,"74,08",4 187,2 133,2 054,57
+6,Hessen,60,64,Kreisangehörige Gemeinde,66350019019,6635019,"Vöhl, Nationalparkgemeinde",Gemeindevorstand der Gemeinde Vöhl,Schloßstraße 1,34516,Vöhl,"98,85",5 454,2 714,2 740,55
+6,Hessen,60,63,Stadt,66350020020,6635020,"Volkmarsen, Stadt",Magistrat der Stadt Volkmarsen,Steinweg 29,34471,Volkmarsen,"67,47",6 736,3 349,3 387,100
+6,Hessen,60,63,Stadt,66350021021,6635021,"Waldeck, Nationalparkstadt",Magistrat der Stadt Waldeck,Am Rathaus 1,34513,Waldeck,"115,70",6 768,3 361,3 407,58
+6,Hessen,60,64,Kreisangehörige Gemeinde,66350022022,6635022,Willingen (Upland),Gemeindevorstand der Gemeinde Willingen (Upland),Waldecker Straße 12,34508,Willingen (Upland),"80,26",6 128,3 083,3 045,76
+6,Hessen,40,44,Landkreis,6636,,Werra-Meißner-Kreis,Kreisausschuss des Werra-Meißner-Kreises,Schlossplatz 1,37269,Eschwege,"1024,83",99 714,49 379,50 335,97
+6,Hessen,60,63,Stadt,66360001001,6636001,"Bad Sooden-Allendorf, Stadt",Magistrat der Stadt Bad Sooden-Allendorf,Marktplatz 8,37242,Bad Sooden-Allendorf,"73,75",8 478,4 283,4 195,115
+6,Hessen,60,64,Kreisangehörige Gemeinde,66360002002,6636002,Berkatal,Gemeindevorstand der Gemeinde Berkatal,Berkastraße 54,37297,Berkatal,"19,57",1 472,738,734,75
+6,Hessen,60,63,Stadt,66360003003,6636003,"Eschwege, Kreisstadt",Magistrat der Stadt Eschwege,Obermarkt 22,37269,Eschwege,"63,26",19 278,9 292,9 986,305
+6,Hessen,60,63,Stadt,66360004004,6636004,"Großalmerode, Stadt",Magistrat der Stadt Großalmerode,Marktplatz 11,37247,Großalmerode,"37,59",6 289,3 124,3 165,167
+6,Hessen,60,64,Kreisangehörige Gemeinde,66360005005,6636005,Herleshausen,Gemeindevorstand der Gemeinde Herleshausen,Bahnhofstraße 15,37293,Herleshausen,"59,50",2 741,1 404,1 337,46
+6,Hessen,60,63,Stadt,66360006006,6636006,"Hessisch Lichtenau, Stadt",Magistrat der Stadt Hessisch Lichtenau,Landgrafenstraße 52,37235,Hessisch Lichtenau,"105,72",12 360,6 222,6 138,117
+6,Hessen,60,64,Kreisangehörige Gemeinde,66360007007,6636007,Meinhard,Gemeindevorstand der Gemeinde Meinhard,Sandstraße 15,37276,Meinhard,"39,62",4 548,2 224,2 324,115
+6,Hessen,60,64,Kreisangehörige Gemeinde,66360008008,6636008,Meißner,Gemeindevorstand der Gemeinde Meißner,Hinterweg 4,37290,Meißner,"44,81",2 938,1 457,1 481,66
+6,Hessen,60,64,Kreisangehörige Gemeinde,66360009009,6636009,Neu-Eichenberg,Gemeindevorstand der Gemeinde Neu-Eichenberg,Lange Straße 27,37249,Neu-Eichenberg,"27,66",1 811,910,901,65
+6,Hessen,60,64,Kreisangehörige Gemeinde,66360010010,6636010,Ringgau,Gemeindevorstand der Gemeinde Ringgau,Am Anger 3,37296,Ringgau,"66,81",2 875,1 494,1 381,43
+6,Hessen,60,63,Stadt,66360011011,6636011,"Sontra, Stadt",Magistrat der Stadt Sontra,Marktplatz 6,36205,Sontra,"111,28",7 642,3 888,3 754,69
+6,Hessen,60,63,Stadt,66360012012,6636012,"Waldkappel, Stadt",Magistrat der Stadt Waldkappel,Leipziger Straße 34,37284,Waldkappel,"96,53",4 239,2 141,2 098,44
+6,Hessen,60,63,Stadt,66360013013,6636013,"Wanfried, Stadt",Magistrat der Stadt Wanfried,Marktstraße 18,37281,Wanfried,"46,88",4 161,2 048,2 113,89
+6,Hessen,60,64,Kreisangehörige Gemeinde,66360014014,6636014,Wehretal,Gemeindevorstand der Gemeinde Wehretal,Landstraße 70,37287,Wehretal,"39,20",4 981,2 417,2 564,127
+6,Hessen,60,64,Kreisangehörige Gemeinde,66360015015,6636015,Weißenborn,Gemeindevorstand der Gemeinde Weißenborn,Kirchplatz 1,37299,Weißenborn,"15,56",958,471,487,62
+6,Hessen,60,63,Stadt,66360016016,6636016,"Witzenhausen, Stadt",Magistrat der Stadt Witzenhausen,Am Markt 1,37213,Witzenhausen,"126,78",14 943,7 266,7 677,118
