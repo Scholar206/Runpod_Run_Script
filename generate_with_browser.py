@@ -198,10 +198,19 @@ def extract_response_text(messages):
 async def process_single_prompt(generator, encoding, prompt_text, args, browser_tool=None):
     """Process a single prompt and return only the response text"""
     try:
+        # Limit prompt length to prevent CUDA errors
+        if len(prompt_text) > 4000:
+            prompt_text = prompt_text[:4000] + "\n\nBitte beantworte diese Anfrage kurz und präzise."
+            print("Warning: Prompt truncated to prevent CUDA errors")
+        
         # Create fresh message list for each prompt
         system_message = create_system_message(args, browser_tool)
         user_message = Message.from_role_and_content(Role.USER, prompt_text)
         messages = [system_message, user_message]
+        
+        # Set max tokens to prevent context overflow
+        max_response_tokens = 500
+        tokens_generated = 0
         
         while True:
             last_message = messages[-1]
@@ -225,12 +234,23 @@ async def process_single_prompt(generator, encoding, prompt_text, args, browser_
             conversation = Conversation.from_messages(messages)
             tokens = encoding.render_conversation_for_completion(conversation, Role.ASSISTANT)
             
+            # Check token count before generation
+            if len(tokens) > args.context - 1000:
+                print("Warning: Context too long, truncating...")
+                return "ERROR: Context too long for processing"
+            
             parser = StreamableParser(encoding, role=Role.ASSISTANT)
             current_output_text = ""
             output_text_delta_buffer = ""
             
             for predicted_token in generator.generate(tokens, encoding.stop_tokens_for_assistant_actions()):
                 parser.process(predicted_token)
+                
+                # Check if we've generated too many tokens
+                tokens_generated += 1
+                if tokens_generated > max_response_tokens:
+                    print("Response truncated to prevent overflow")
+                    break
                 
                 if not parser.last_content_delta:
                     continue
@@ -262,11 +282,14 @@ async def process_single_prompt(generator, encoding, prompt_text, args, browser_
         
         # Extract only the response text
         response_text = extract_response_text(messages)
-        return response_text
+        return response_text if response_text else "ERROR: Empty response generated"
         
     except Exception as e:
-        print(f"Error in process_single_prompt: {e}")
-        return f"ERROR: {e}"
+        error_msg = str(e)
+        if "CUDA error" in error_msg:
+            return f"CUDA_ERROR: {error_msg[:100]}..."
+        else:
+            return f"ERROR: {error_msg[:100]}..."
 
 
 def save_results_to_csv(results, output_file="ai_responses.csv"):
