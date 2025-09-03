@@ -47,6 +47,9 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
 
     def start_gpt_process(self):
         """Startet den GPT-OSS Prozess einmalig"""
+        # Pfad zum Parent-Verzeichnis berechnen
+        parent_dir = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+
         cmd = [
             "python", "-m", "gpt_oss.chat",
             self.model_path,
@@ -57,7 +60,7 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
             "--context", "2048"
         ]
         
-        print("Starte GPT-OSS Prozess...")
+        print(f"Starte GPT-OSS Prozess im Parent-Verzeichnis: {parent_dir}")
         self.process = subprocess.Popen(
             cmd,
             stdin=subprocess.PIPE,
@@ -65,7 +68,8 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
             stderr=subprocess.PIPE,
             text=True,
             bufsize=1,
-            universal_newlines=True
+            universal_newlines=True,
+            cwd=parent_dir   # <-- wichtig: hier wird ein Ordner zurück gewechselt
         )
         
         # Starte Output-Reader Thread
@@ -75,6 +79,7 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
         # Warte auf Initialisierung
         print("Warte auf Modell-Initialisierung...")
         self._wait_for_ready()
+
         
     def _read_output(self):
         """Liest kontinuierlich Output vom Prozess"""
