@@ -18,7 +18,7 @@ class GPTOSSPromptSender:
         # Drei kleine Test-Prompts (statt der langen Hochwasserschutz-Templates)
         self.prompts = [
             """# PROMPT 1: INTERNE RECHERCHE (ALLGEMEIN)
-            
+
 Führe eine interne Recherche durch und beantworte:
 - Was ist die Hauptstadt von Deutschland?  
 
@@ -27,7 +27,7 @@ Schreibe nur den Stadtnamen, sonst nichts.
 """,
 
             """# PROMPT 2: INTERNE RECHERCHE (EINFACH)
-            
+
 Führe eine interne Recherche durch und beantworte:
 - Welche Sprache wird in Deutschland hauptsächlich gesprochen?  
 
@@ -36,7 +36,7 @@ Nur die Sprache nennen.
 """,
 
             """# PROMPT 3: INTERNE RECHERCHE (KURZ)
-            
+
 Führe eine interne Recherche durch und beantworte:
 - Nenne die ungefähre Einwohnerzahl von Darmstadt.  
 
@@ -67,9 +67,9 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
-            bufsize=1,
+            bufsize=0,  # Unbepuffert für bessere Kontrolle
             universal_newlines=True,
-            cwd=parent_dir   # <-- wichtig: hier wird ein Ordner zurück gewechselt
+            cwd=parent_dir
         )
         
         # Starte Output-Reader Thread
@@ -80,7 +80,6 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
         print("Warte auf Modell-Initialisierung...")
         self._wait_for_ready()
 
-        
     def _read_output(self):
         """Liest kontinuierlich Output vom Prozess"""
         try:
@@ -105,15 +104,17 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
     def _wait_for_ready(self):
         """Wartet bis das System bereit ist"""
         ready_indicators = ["User:", "System Message:", "Model Identity:"]
-        timeout = 30
+        timeout = 45  # Erhöht auf 45 Sekunden
         start_time = time.time()
         
         while time.time() - start_time < timeout:
             try:
-                line = self.output_queue.get(timeout=1)
+                line = self.output_queue.get(timeout=2)
                 print(f"Init: {line.strip()}")
                 if any(indicator in line for indicator in ready_indicators):
                     print("System ist bereit!")
+                    # Zusätzliche Pause nach Bereitschaft
+                    time.sleep(2)
                     return True
             except queue.Empty:
                 continue
@@ -128,11 +129,80 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
             
         try:
             print(f"\n=== Sende Prompt {prompt_num} für Zeile {row_num} ===")
-            self.process.stdin.write(prompt + "\n")
+            print(f"Prompt Länge: {len(prompt)} Zeichen")
+            
+            # LÖSUNG 1: Prompt als ein Block mit speziellem Delimiter senden
+            delimiter = "<<<END_PROMPT>>>"
+            full_message = f"{prompt}\n{delimiter}\n"
+            
+            # Debug: Zeige ersten Teil des Prompts
+            print(f"Erste 200 Zeichen: {prompt[:200]}...")
+            
+            # Sende den kompletten Prompt mit Delimiter
+            self.process.stdin.write(full_message)
             self.process.stdin.flush()
+            
             response = self._collect_response()
             print(f"Antwort erhalten für Zeile {row_num}, Prompt {prompt_num}")
             return response
+            
+        except Exception as e:
+            print(f"Fehler beim Senden des Prompts: {e}")
+            return f"FEHLER: {e}"
+    
+    def send_prompt_alternative(self, prompt: str, row_num: int, prompt_num: int) -> str:
+        """Alternative Methode: Prompt in Teilen senden"""
+        if not self.process or self.process.poll() is not None:
+            raise Exception("GPT Prozess nicht aktiv")
+            
+        try:
+            print(f"\n=== Sende Prompt {prompt_num} für Zeile {row_num} (Alternative) ===")
+            
+            # LÖSUNG 2: Mehrzeilige Prompts korrekt formatieren
+            lines = prompt.split('\n')
+            for i, line in enumerate(lines):
+                if i == len(lines) - 1:  # Letzte Zeile
+                    self.process.stdin.write(line + "\n\n")  # Doppeltes Newline am Ende
+                else:
+                    self.process.stdin.write(line + "\n")
+                
+            self.process.stdin.flush()
+            
+            response = self._collect_response()
+            print(f"Antwort erhalten für Zeile {row_num}, Prompt {prompt_num}")
+            return response
+            
+        except Exception as e:
+            print(f"Fehler beim Senden des Prompts: {e}")
+            return f"FEHLER: {e}"
+    
+    def send_prompt_encoded(self, prompt: str, row_num: int, prompt_num: int) -> str:
+        """LÖSUNG 3: Base64-kodierte Übertragung für mehrzeilige Prompts"""
+        if not self.process or self.process.poll() is not None:
+            raise Exception("GPT Prozess nicht aktiv")
+            
+        try:
+            import base64
+            
+            print(f"\n=== Sende Prompt {prompt_num} für Zeile {row_num} (Encoded) ===")
+            
+            # Kodiere den Prompt
+            encoded_prompt = base64.b64encode(prompt.encode('utf-8')).decode('ascii')
+            
+            # Sende Dekodierungsanweisung + kodierten Prompt
+            wrapper = f"""Dekodiere den folgenden Base64-kodierten Text und bearbeite ihn als Prompt:
+
+{encoded_prompt}
+
+Dekodiere zuerst mit Base64 und führe dann die Anweisungen aus."""
+
+            self.process.stdin.write(wrapper + "\n")
+            self.process.stdin.flush()
+            
+            response = self._collect_response()
+            print(f"Antwort erhalten für Zeile {row_num}, Prompt {prompt_num}")
+            return response
+            
         except Exception as e:
             print(f"Fehler beim Senden des Prompts: {e}")
             return f"FEHLER: {e}"
@@ -149,10 +219,13 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
             try:
                 line = self.output_queue.get(timeout=2)
                 print(f"[DEBUG] {line.strip()}")
+                
                 if "Assistant:" in line:
                     assistant_started = True
                     continue
+                    
                 if assistant_started:
+                    # Prüfe auf Antwort-Ende
                     if self._is_response_complete(line, response_lines):
                         response_complete = True
                         break
@@ -160,6 +233,7 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
                         response_complete = True
                         break
                     response_lines.append(line.rstrip())
+                    
             except queue.Empty:
                 if assistant_started and response_lines:
                     response_complete = True
@@ -172,8 +246,9 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
         return "\n".join(response_lines)
     
     def _is_response_complete(self, line: str, response_lines: List[str]) -> bool:
+        """Prüft ob die Antwort vollständig ist"""
         full_response = "\n".join(response_lines + [line])
-        end_markers = ["NICHTS GEFUNDEN", "etc...", "User:", "\x1b[91mUser:"]
+        end_markers = ["NICHTS GEFUNDEN", "etc...", "User:", "\x1b[91mUser:", "END_RESPONSE"]
         return any(marker in line or marker in full_response for marker in end_markers)
     
     def process_all_data(self, output_file: str = "results.txt"):
@@ -203,16 +278,31 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
                 }
                 
                 for prompt_num, prompt_template in enumerate(self.prompts, 1):
-                    response = self.send_prompt(
-                        prompt_template.format(**row_data),
-                        row_data['row_num'],
-                        prompt_num
-                    )
+                    # Teste verschiedene Methoden
+                    if prompt_num == 1:
+                        response = self.send_prompt(
+                            prompt_template.format(**row_data),
+                            row_data['row_num'],
+                            prompt_num
+                        )
+                    elif prompt_num == 2:
+                        response = self.send_prompt_alternative(
+                            prompt_template.format(**row_data),
+                            row_data['row_num'],
+                            prompt_num
+                        )
+                    else:
+                        response = self.send_prompt_encoded(
+                            prompt_template.format(**row_data),
+                            row_data['row_num'],
+                            prompt_num
+                        )
+                    
                     row_results['responses'].append({
                         'prompt_num': prompt_num,
                         'response': response
                     })
-                    time.sleep(1)
+                    time.sleep(2)  # Längere Pause zwischen Prompts
                 
                 results.append(row_results)
                 self.save_results(results, output_file)
@@ -227,16 +317,29 @@ Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
             self.cleanup()
     
     def cleanup(self):
+        """Beendet alle Prozesse sauber"""
         self.stop_reading = True
+        
+        # pexpect Prozess beenden falls vorhanden
+        if hasattr(self, 'pexpect_child') and self.pexpect_child:
+            try:
+                self.pexpect_child.close(force=True)
+                print("pexpect Prozess beendet")
+            except:
+                pass
+        
+        # subprocess Prozess beenden
         if self.process:
             try:
+                self.process.stdin.close()  # Schließe stdin zuerst
                 self.process.terminate()
                 self.process.wait(timeout=5)
             except:
                 self.process.kill()
-            print("GPT Prozess beendet")
+            print("GPT subprocess beendet")
     
     def save_results(self, results: List[Dict], output_file: str):
+        """Speichert die Ergebnisse in eine Datei"""
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write(f"Ergebnisse der Test-Prompts - {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
             f.write("="*80 + "\n\n")
