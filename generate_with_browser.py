@@ -192,14 +192,17 @@ async def main(args):
             from gpt_oss.torch.utils import init_distributed
             device = init_distributed()
             generator = TritonGenerator(args.checkpoint, args.context, device)
+            generator.max_tokens = args.max_tokens  # Set max output tokens
         case "torch":
             from gpt_oss.torch.model import TokenGenerator as TorchGenerator
             from gpt_oss.torch.utils import init_distributed
             device = init_distributed()
             generator = TorchGenerator(args.checkpoint, device)
+            generator.max_tokens = args.max_tokens  # Set max output tokens
         case "vllm":
             from gpt_oss.vllm.token_generator import TokenGenerator as VLLMGenerator
-            generator = VLLMGenerator(args.checkpoint, tensor_parallel_size=2)
+            generator = VLLMGenerator(args.checkpoint, tensor_parallel_size=2, max_model_len=args.context)
+            generator.max_tokens = args.max_tokens  # Set max output tokens
         case _:
             raise ValueError(f"Invalid backend: {args.backend}")
 
