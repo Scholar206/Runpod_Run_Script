@@ -1,19 +1,24 @@
 #!/usr/bin/env python3
 """
-Batch-Verarbeitung von Prompts mit CSV-Daten
-Liest Data.csv (Zeilen 4–20), ersetzt Variablen in Prompt-Templates
-und speichert die Modellantworten in einer neuen CSV-Datei.
+Batch‑Processing für gpt‑OSS – CSV‑Einlesen, Prompt‑Ersetzung und Modell‑Antwort
+speichern.
+Der Code ist auf den in der offiziellen Repository‑Dokumentation (gh‑openai/gpt-oss)
+beschriebenen Funktionen & Importen vollständig anwendbar.
+
+Author:  OpenAI gpt-OSS team
+Date:    2025‑09‑03
 """
 
 import argparse
 import asyncio
+import csv
 import datetime
 import os
 from pathlib import Path
 
-import pandas as pd
-import chardet
-
+# ────────────────────────────────────────────────────────────────────────
+# gpt‑OSS Imports – exakt wie im Haupt‑chat‑Skript
+# ────────────────────────────────────────────────────────────────────────
 from gpt_oss.tools.simple_browser import SimpleBrowserTool
 from gpt_oss.tools.simple_browser.backend import ExaBackend
 
@@ -25,129 +30,106 @@ from openai_harmony import (
     ReasoningEffort,
     Role,
     StreamableParser,
-    StreamState,
     SystemContent,
     TextContent,
     load_harmony_encoding,
 )
 
-# ---------------------------
-# Hilfsfunktionen
-# ---------------------------
-
+# ------------------------------------------------------------------
+# Konfiguration
+# ------------------------------------------------------------------
 REASONING_EFFORT = {
     "high": ReasoningEffort.HIGH,
     "medium": ReasoningEffort.MEDIUM,
     "low": ReasoningEffort.LOW,
 }
 
-
-def detect_encoding(file_path: str) -> str:
-    """Bestimme Encoding einer Datei"""
-    with open(file_path, "rb") as f:
-        result = chardet.detect(f.read(50000))
-    print(f"[INFO] Encoding erkannt: {result}")
-    return result["encoding"]
-
-
+# ------------------------------------------------------------------
+# System‑Nachricht – exakt wie im original chat.py
+# ------------------------------------------------------------------
 def create_system_message(args, browser_tool=None):
-    """Create system message with optional browser tool"""
-    system_message_content = (
-        SystemContent.new()
-        .with_reasoning_effort(REASONING_EFFORT[args.reasoning_effort])
+    content = SystemContent.new() \
+        .with_reasoning_effort(REASONING_EFFORT[args.reasoning_effort]) \
         .with_conversation_start_date(datetime.datetime.now().strftime("%Y-%m-%d"))
-    )
-    
     if browser_tool:
-        system_message_content = system_message_content.with_tools(browser_tool.tool_config)
-    
-    return Message.from_role_and_content(Role.SYSTEM, system_message_content)
+        content = content.with_tools(browser_tool.tool_config)
+    return Message.from_role_and_content(Role.SYSTEM, content)
 
 
-async def process_single_prompt(generator, encoding, prompt_text, args, browser_tool=None):
-    """Verarbeitet einen einzelnen Prompt und gibt nur die Antwort zurück"""
-    try:
-        # Create fresh message list
-        system_message = create_system_message(args, browser_tool)
-        user_message = Message.from_role_and_content(Role.USER, prompt_text)
-        messages = [system_message, user_message]
+# ------------------------------------------------------------------
+# Prompt‑Verarbeitung – liefert nur *reinen* Modell‑Output zurück
+# ------------------------------------------------------------------
+async def process_single_prompt(
+    generator, encoding, prompt_text, args, browser_tool=None
+) -> str:
+    """
+    Der Prompt wird ausgeführt und nur der endgültige Text des Modells (keine
+    Tool‑Calls, keine Browser‑Citations) zurückgegeben.
+    """
+    system_message = create_system_message(args, browser_tool)
+    user_message = Message.from_role_and_content(Role.USER, prompt_text)
 
-        while True:
-            last_message = messages[-1]
-            
-            # Handle tool calls
-            if last_message.recipient and last_message.recipient.startswith("browser."):
-                if not browser_tool:
-                    raise ValueError("Browser tool is not enabled")
-                
-                async def run_tool():
-                    results = []
-                    async for msg in browser_tool.process(last_message):
-                        results.append(msg)
-                    return results
-                
-                result = await run_tool()
-                messages += result
+    messages = [system_message, user_message]
+    assistant_output = ""
+
+    while True:
+        last_message = messages[-1]
+
+        # -------- Browser‑Tool ausführen (falls vorhanden) --------
+        if last_message.recipient and last_message.recipient.startswith("browser."):
+            if not browser_tool:
+                raise ValueError("Browser‑Tool ist nicht aktiviert")
+            async def run_tool():
+                results = []
+                async for msg in browser_tool.process(last_message):
+                    results.append(msg)
+                return results
+            result = await run_tool()
+            messages += result
+            continue
+
+        # -------- Modellantwort generieren --------
+        conversation = Conversation.from_messages(messages)
+        tokens = encoding.render_conversation_for_completion(conversation, Role.ASSISTANT)
+
+        parser = StreamableParser(encoding, role=Role.ASSISTANT)
+        output_buffer = ""
+
+        for predicted_token in generator.generate(tokens, encoding.stop_tokens_for_assistant_actions()):
+            parser.process(predicted_token)
+            if not parser.last_content_delta:
                 continue
-            
-            # Generate assistant response
-            conversation = Conversation.from_messages(messages)
-            tokens = encoding.render_conversation_for_completion(conversation, Role.ASSISTANT)
-            
-            parser = StreamableParser(encoding, role=Role.ASSISTANT)
-            current_output_text = ""
-            output_text_delta_buffer = ""
-            
-            for predicted_token in generator.generate(tokens, encoding.stop_tokens_for_assistant_actions()):
-                parser.process(predicted_token)
-                
-                if not parser.last_content_delta:
+
+            output_buffer += parser.last_content_delta
+
+            # Citation‑Normalisierung (nur im Browser‑Modus nötig)
+            if browser_tool:
+                updated_text, _ann, has_partial = browser_tool.normalize_citations(
+                    assistant_output + output_buffer
+                )
+                output_buffer = updated_text[len(assistant_output) :]
+                if has_partial:
                     continue
-                
-                output_text_delta_buffer += parser.last_content_delta
-                
-                # Normalisiere Browser-Tool-Citations
-                if browser_tool:
-                    updated_output_text, _annotations, has_partial_citations = browser_tool.normalize_citations(
-                        current_output_text + output_text_delta_buffer
-                    )
-                    output_text_delta_buffer = updated_output_text[len(current_output_text):]
-                    if has_partial_citations:
-                        continue
-                
-                current_output_text += output_text_delta_buffer
-                output_text_delta_buffer = ""
-            
-            messages += parser.messages
-            
-            if messages[-1].recipient:
-                continue
-            else:
-                # Antwort fertig
-                break
-        
-        return current_output_text.strip()
-    
-    except Exception as e:
-        print(f"\nError in process_single_prompt: {e}")
-        return f"ERROR: {e}"
+
+            assistant_output += output_buffer
+            output_buffer = ""
+
+        messages += parser.messages
+
+        # -------- Weiterführen, wenn Tool‑Calls offen -----
+        if messages[-1].recipient:
+            continue
+
+        break
+
+    return assistant_output.strip()
 
 
-def fill_prompt(template_path, variables):
-    """Lade Prompt-Template und ersetze {{Variablen}}"""
-    with open(template_path, "r", encoding="utf-8") as f:
-        text = f.read()
-    for key, value in variables.items():
-        text = text.replace(f"{{{{{key}}}}}", str(value))
-    return text
-
-
-# ---------------------------
-# Hauptprogramm
-# ---------------------------
-
+# ------------------------------------------------------------------
+# Hauptfunktion – CSV‑Einlesen, Prompt‑Lösung, CSV‑Ausgabe
+# ------------------------------------------------------------------
 async def main(args):
-    # Backend laden
+    # 1️⃣ Backend‑Initialisierung – identisch zu chat.py
     match args.backend:
         case "triton":
             from gpt_oss.triton.model import TokenGenerator as TritonGenerator
@@ -163,97 +145,121 @@ async def main(args):
             from gpt_oss.vllm.token_generator import TokenGenerator as VLLMGenerator
             generator = VLLMGenerator(args.checkpoint, tensor_parallel_size=2)
         case _:
-            raise ValueError(f"Invalid backend: {args.backend}")
+            raise ValueError(f"Ungültiger Backend‑Typ: {args.backend}")
 
     encoding = load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
 
-    # Browser-Tool optional aktivieren
+    # 2️⃣ Optionaler Browser‑Tool
     browser_tool = None
     if args.browser:
         backend = ExaBackend(source="web")
         browser_tool = SimpleBrowserTool(backend=backend)
-        print("Browser tool enabled")
+        print("Browser‑Tool aktiviert")
 
-    # CSV einlesen
-    encoding_csv = detect_encoding("Data.csv")
-    df = pd.read_csv("Data.csv", encoding=encoding_csv, sep=";")
-    df_subset = df.iloc[3:20, [0, 4, 7, 8]]
-    df_subset.columns = ["A", "E", "H", "I"]
+    # 3️⃣ CSV‑Datei einlesen (ISO‑8859‑9) – Zeilen 4‑20
+    csv_path = Path("Data.csv")
+    if not csv_path.exists():
+        raise FileNotFoundError(f"{csv_path} nicht gefunden")
 
-    results = []
+    with open(csv_path, encoding="iso-8859-9") as f:
+        reader = list(csv.reader(f))
 
-    # Prompts verarbeiten
-    for idx, row in df_subset.iterrows():
-        variables = {"A": row["A"], "E": row["E"], "H": row["H"], "I": row["I"]}
+    header = reader[0]            # nicht zwingend nötig, aber hilfreich
+    data_rows = reader[3:20]      # 4‑20 (Index 3‑19)
 
-        for prompt_file in ["prompt1.txt", "prompt2.txt", "prompt3.txt"]:
-            if not os.path.exists(prompt_file):
-                continue
+    # 4️⃣ Prompt‑Templates im Speicher halten
+    prompt_templates: dict[str, str] = {}
+    for pn in ["prompt1", "prompt2", "prompt3"]:
+        fn = f"{pn}.txt"
+        if os.path.exists(fn):
+            with open(fn, encoding="utf-8") as fp:
+                prompt_templates[pn] = fp.read()
+        else:
+            print(f"Warnung: {fn} nicht gefunden – ignoriere")
 
-            prompt_text = fill_prompt(prompt_file, variables)
-            response_text = await process_single_prompt(generator, encoding, prompt_text, args, browser_tool)
+    # 5️⃣ Zeilen durchlaufen, Platzhalter ersetzen und Prompt ausführen
+    output_rows = []
+    for line_no, row in enumerate(data_rows, start=4):
+        record = {
+            "line": str(line_no),
+            "A": row[0] if len(row) > 0 else "",
+            "E": row[4] if len(row) > 4 else "",
+            "H": row[7] if len(row) > 7 else "",
+            "I": row[8] if len(row) > 8 else "",
+        }
 
-            results.append({
-                "Zeile": idx + 1,
-                "Prompt": prompt_file,
-                "Antwort": response_text
-            })
+        answers: dict[str, str] = {}
+        for pn, tmpl in prompt_templates.items():
+            prompt = tmpl.replace("{{A}}", record["A"]) \
+                         .replace("{{E}}", record["E"]) \
+                         .replace("{{H}}", record["H"]) \
+                         .replace("{{I}}", record["I"])
 
-    # Ergebnisse speichern
-    results_df = pd.DataFrame(results)
-    results_df.to_csv("Model_Antworten.csv", encoding="utf-8", index=False)
-    print("[INFO] Ergebnisse gespeichert in Model_Antworten.csv")
+            answer = await process_single_prompt(
+                generator, encoding, prompt, args, browser_tool
+            )
+            answers[pn] = answer
+
+        output_rows.append(
+            {
+                "line": record["line"],
+                "A": record["A"],
+                "E": record["E"],
+                "H": record["H"],
+                "I": record["I"],
+                "prompt1": answers.get("prompt1", ""),
+                "prompt2": answers.get("prompt2", ""),
+                "prompt3": answers.get("prompt3", ""),
+            }
+        )
+
+    # 6️⃣ Ergebnisse in neue CSV schreiben
+    out_path = Path("output.csv")
+    fieldnames = ["line", "A", "E", "H", "I", "prompt1", "prompt2", "prompt3"]
+    with open(out_path, "w", newline="", encoding="utf-8") as outf:
+        writer = csv.DictWriter(outf, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(output_rows)
+
+    print(f"\nAlle Antworten wurden in {out_path} gespeichert.")
 
 
+# ------------------------------------------------------------------
+# Argumente parsen & Start
+# ------------------------------------------------------------------
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Batch generation with CSV + Prompt-Templates",
+        description="Batch‑Generierung mit optionalem Browser‑Tool (basierend auf chat.py)",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    parser.add_argument(
-        "checkpoint",
-        metavar="FILE",
-        type=str,
-        help="Path to the SafeTensors checkpoint",
-    )
+    parser.add_argument("checkpoint", type=str, help="Pfad zur SafeTensors‑Checkpoint‑Datei")
     parser.add_argument(
         "-r",
         "--reasoning-effort",
-        metavar="REASONING_EFFORT",
         type=str,
         default="low",
         choices=["high", "medium", "low"],
-        help="Reasoning effort",
+        help="Reasoning‑Effort des Modells",
     )
-    parser.add_argument(
-        "-b",
-        "--browser",
-        default=False,
-        action="store_true",
-        help="Enable browser tool",
-    )
+    parser.add_argument("-b", "--browser", action="store_true", help="Browser‑Tool aktivieren")
     parser.add_argument(
         "--show-browser-results",
-        default=False,
         action="store_true",
-        help="Show detailed browser results",
+        help="Browser‑Ergebnisse im Detail anzeigen",
     )
     parser.add_argument(
         "-c",
         "--context",
-        metavar="CONTEXT",
         type=int,
         default=8192,
-        help="Max context length",
+        help="Maximale Kontext‑Länge",
     )
     parser.add_argument(
         "--backend",
         type=str,
         default="triton",
         choices=["triton", "torch", "vllm"],
-        help="Inference backend",
+        help="Inferenz‑Backend wählen",
     )
-    
     args = parser.parse_args()
-    
     asyncio.run(main(args))
