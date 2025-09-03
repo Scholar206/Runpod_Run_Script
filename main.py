@@ -20,7 +20,7 @@ class GPTOSSPromptSender:
             """# PROMPT 1: INTERNE RECHERCHE (ALLGEMEIN)
             
 Führe eine interne Recherche durch und beantworte:
-- Was ist die Hauptstadt von {land}?  
+- Was ist die Hauptstadt von Deutschland?  
 
 ## AUSGABEFORMAT
 Schreibe nur den Stadtnamen, sonst nichts.
@@ -29,7 +29,7 @@ Schreibe nur den Stadtnamen, sonst nichts.
             """# PROMPT 2: INTERNE RECHERCHE (EINFACH)
             
 Führe eine interne Recherche durch und beantworte:
-- Welche Sprache wird in {land} hauptsächlich gesprochen?  
+- Welche Sprache wird in Deutschland hauptsächlich gesprochen?  
 
 ## AUSGABEFORMAT
 Nur die Sprache nennen.
@@ -38,7 +38,7 @@ Nur die Sprache nennen.
             """# PROMPT 3: INTERNE RECHERCHE (KURZ)
             
 Führe eine interne Recherche durch und beantworte:
-- Nenne die ungefähre Einwohnerzahl von {gemeinde}.  
+- Nenne die ungefähre Einwohnerzahl von Darmstadt.  
 
 ## AUSGABEFORMAT
 Nur die Zahl mit Einheit (z. B. '50.000 Einwohner').
