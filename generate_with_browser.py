@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """
-Harmony chat batch processing with CSV data integration and browser tool support
-Processes CSV data through multiple prompt templates
+Batch-Verarbeitung von Prompts mit CSV-Daten
+Liest Data.csv (Zeilen 4–20), ersetzt Variablen in Prompt-Templates
+und speichert die Modellantworten in einer neuen CSV-Datei.
 """
 
 import argparse
 import asyncio
 import datetime
 import os
-import csv
-import chardet
 from pathlib import Path
+
+import pandas as pd
+import chardet
 
 from gpt_oss.tools.simple_browser import SimpleBrowserTool
 from gpt_oss.tools.simple_browser.backend import ExaBackend
@@ -29,6 +31,9 @@ from openai_harmony import (
     load_harmony_encoding,
 )
 
+# ---------------------------
+# Hilfsfunktionen
+# ---------------------------
 
 REASONING_EFFORT = {
     "high": ReasoningEffort.HIGH,
@@ -37,50 +42,12 @@ REASONING_EFFORT = {
 }
 
 
-def detect_encoding(file_path):
-    """Detect the encoding of a file"""
-    with open(file_path, 'rb') as f:
-        raw_data = f.read()
-        result = chardet.detect(raw_data)
-        return result['encoding']
-
-
-def read_csv_data(csv_file):
-    """Read CSV file and return data from specified rows"""
-    # Detect encoding
-    encoding = detect_encoding(csv_file)
-    print(f"Detected encoding for {csv_file}: {encoding}")
-    
-    data_rows = []
-    
-    with open(csv_file, 'r', encoding=encoding) as f:
-        reader = csv.reader(f, delimiter=',')
-        all_rows = list(reader)
-        
-        # Extract rows 4-20 (indices 3-19 in 0-based indexing)
-        for row_idx in range(3, min(20, len(all_rows))):
-            if row_idx < len(all_rows):
-                row = all_rows[row_idx]
-                # Extract columns A (0), E (4), H (7), I (8)
-                row_data = {
-                    'A': row[0] if len(row) > 0 else '',  # Bundesland
-                    'E': row[4] if len(row) > 4 else '',  # Textkennzeichen
-                    'H': row[7] if len(row) > 7 else '',  # Gemeinde/Stadt
-                    'I': row[8] if len(row) > 8 else '',  # Verwaltungssitz
-                    'row_number': row_idx + 1  # Keep track of original row number (1-based)
-                }
-                data_rows.append(row_data)
-    
-    return data_rows
-
-
-def replace_variables_in_prompt(prompt_template, row_data):
-    """Replace {{A}}, {{E}}, {{H}}, {{I}} variables in prompt template"""
-    prompt = prompt_template
-    for key in ['A', 'E', 'H', 'I']:
-        placeholder = f"{{{{{key}}}}}"
-        prompt = prompt.replace(placeholder, row_data[key])
-    return prompt
+def detect_encoding(file_path: str) -> str:
+    """Bestimme Encoding einer Datei"""
+    with open(file_path, "rb") as f:
+        result = chardet.detect(f.read(50000))
+    print(f"[INFO] Encoding erkannt: {result}")
+    return result["encoding"]
 
 
 def create_system_message(args, browser_tool=None):
@@ -97,28 +64,14 @@ def create_system_message(args, browser_tool=None):
     return Message.from_role_and_content(Role.SYSTEM, system_message_content)
 
 
-def extract_assistant_response(messages):
-    """Extract only the assistant's final response text, excluding thinking/browsing"""
-    for msg in reversed(messages):
-        if msg.role == Role.ASSISTANT and msg.content:
-            # Get the last assistant message content
-            for content_item in msg.content:
-                if hasattr(content_item, 'text'):
-                    return content_item.text
-    return ""
-
-
 async def process_single_prompt(generator, encoding, prompt_text, args, browser_tool=None):
-    """Process a single prompt with fresh context"""
-    
-    response_text = ""
-    
+    """Verarbeitet einen einzelnen Prompt und gibt nur die Antwort zurück"""
     try:
-        # Create fresh message list for each prompt
+        # Create fresh message list
         system_message = create_system_message(args, browser_tool)
         user_message = Message.from_role_and_content(Role.USER, prompt_text)
         messages = [system_message, user_message]
-        
+
         while True:
             last_message = messages[-1]
             
@@ -151,41 +104,50 @@ async def process_single_prompt(generator, encoding, prompt_text, args, browser_
                 if not parser.last_content_delta:
                     continue
                 
-                should_send_output_text_delta = True
                 output_text_delta_buffer += parser.last_content_delta
                 
-                # Handle browser tool citation normalization
+                # Normalisiere Browser-Tool-Citations
                 if browser_tool:
                     updated_output_text, _annotations, has_partial_citations = browser_tool.normalize_citations(
                         current_output_text + output_text_delta_buffer
                     )
                     output_text_delta_buffer = updated_output_text[len(current_output_text):]
                     if has_partial_citations:
-                        should_send_output_text_delta = False
+                        continue
                 
-                if should_send_output_text_delta:
-                    current_output_text += output_text_delta_buffer
-                    output_text_delta_buffer = ""
+                current_output_text += output_text_delta_buffer
+                output_text_delta_buffer = ""
             
             messages += parser.messages
             
-            # Check if we need to continue with tool calls
             if messages[-1].recipient:
                 continue
             else:
-                # Assistant response complete - extract only the final response
-                response_text = extract_assistant_response(messages)
+                # Antwort fertig
                 break
         
-        return response_text
-        
+        return current_output_text.strip()
+    
     except Exception as e:
         print(f"\nError in process_single_prompt: {e}")
         return f"ERROR: {e}"
 
 
+def fill_prompt(template_path, variables):
+    """Lade Prompt-Template und ersetze {{Variablen}}"""
+    with open(template_path, "r", encoding="utf-8") as f:
+        text = f.read()
+    for key, value in variables.items():
+        text = text.replace(f"{{{{{key}}}}}", str(value))
+    return text
+
+
+# ---------------------------
+# Hauptprogramm
+# ---------------------------
+
 async def main(args):
-    # Initialize model backend
+    # Backend laden
     match args.backend:
         case "triton":
             from gpt_oss.triton.model import TokenGenerator as TritonGenerator
@@ -205,88 +167,47 @@ async def main(args):
 
     encoding = load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
 
-    # Initialize browser tool if enabled
+    # Browser-Tool optional aktivieren
     browser_tool = None
     if args.browser:
         backend = ExaBackend(source="web")
         browser_tool = SimpleBrowserTool(backend=backend)
         print("Browser tool enabled")
 
-    # Read CSV data
-    print("Reading CSV data...")
-    csv_data = read_csv_data("Data.csv")
-    print(f"Found {len(csv_data)} rows to process (rows 4-20)")
+    # CSV einlesen
+    encoding_csv = detect_encoding("Data.csv")
+    df = pd.read_csv("Data.csv", encoding=encoding_csv, sep=";")
+    df_subset = df.iloc[3:20, [0, 4, 7, 8]]
+    df_subset.columns = ["A", "E", "H", "I"]
 
-    # Read prompt templates
-    prompt_files = ["prompt1.txt", "prompt2.txt", "prompt3.txt"]
-    prompt_templates = {}
-    
-    for prompt_file in prompt_files:
-        if not os.path.exists(prompt_file):
-            print(f"Warning: {prompt_file} not found, skipping...")
-            continue
-        
-        with open(prompt_file, 'r', encoding='utf-8') as f:
-            prompt_templates[prompt_file] = f.read().strip()
-    
-    # Prepare output CSV
-    output_filename = f"results_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
-    
-    with open(output_filename, 'w', newline='', encoding='utf-8') as output_file:
-        # CSV header: Row, Bundesland, Textkennzeichen, Gemeinde, Verwaltungssitz, Prompt1_Response, Prompt2_Response, Prompt3_Response
-        fieldnames = ['Row', 'Bundesland', 'Textkennzeichen', 'Gemeinde', 'Verwaltungssitz']
-        for i in range(1, 4):
-            fieldnames.append(f'Prompt{i}_Response')
-        
-        writer = csv.DictWriter(output_file, fieldnames=fieldnames)
-        writer.writeheader()
-        
-        # Process each data row
-        for row_idx, row_data in enumerate(csv_data, 1):
-            print(f"\n{'='*60}")
-            print(f"Processing row {row_data['row_number']}: {row_data['H']} ({row_data['A']})")
-            print(f"{'='*60}")
-            
-            # Prepare output row
-            output_row = {
-                'Row': row_data['row_number'],
-                'Bundesland': row_data['A'],
-                'Textkennzeichen': row_data['E'],
-                'Gemeinde': row_data['H'],
-                'Verwaltungssitz': row_data['I']
-            }
-            
-            # Process each prompt template for this row
-            for prompt_num, (prompt_file, prompt_template) in enumerate(prompt_templates.items(), 1):
-                print(f"\nProcessing {prompt_file} for row {row_data['row_number']}...")
-                
-                # Replace variables in prompt
-                filled_prompt = replace_variables_in_prompt(prompt_template, row_data)
-                
-                # Process the prompt
-                response = await process_single_prompt(generator, encoding, filled_prompt, args, browser_tool)
-                
-                # Store only the response (not the thinking/browsing process)
-                output_row[f'Prompt{prompt_num}_Response'] = response
-                
-                print(f"Response captured for {prompt_file}")
-            
-            # Write row to CSV
-            writer.writerow(output_row)
-            output_file.flush()  # Ensure data is written immediately
-            
-            print(f"Row {row_data['row_number']} completed and saved")
+    results = []
 
-    print(f"\n{'='*60}")
-    print(f"PROCESSING COMPLETE")
-    print(f"{'='*60}")
-    print(f"Results saved to: {output_filename}")
-    print(f"Processed {len(csv_data)} rows with {len(prompt_templates)} prompts each")
+    # Prompts verarbeiten
+    for idx, row in df_subset.iterrows():
+        variables = {"A": row["A"], "E": row["E"], "H": row["H"], "I": row["I"]}
+
+        for prompt_file in ["prompt1.txt", "prompt2.txt", "prompt3.txt"]:
+            if not os.path.exists(prompt_file):
+                continue
+
+            prompt_text = fill_prompt(prompt_file, variables)
+            response_text = await process_single_prompt(generator, encoding, prompt_text, args, browser_tool)
+
+            results.append({
+                "Zeile": idx + 1,
+                "Prompt": prompt_file,
+                "Antwort": response_text
+            })
+
+    # Ergebnisse speichern
+    results_df = pd.DataFrame(results)
+    results_df.to_csv("Model_Antworten.csv", encoding="utf-8", index=False)
+    print("[INFO] Ergebnisse gespeichert in Model_Antworten.csv")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="CSV batch processing with browser tool support",
+        description="Batch generation with CSV + Prompt-Templates",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
@@ -335,5 +256,4 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
-    # Run async main
     asyncio.run(main(args))
