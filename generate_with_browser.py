@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Batch generation with browser tool support
-Processes multiple prompt files sequentially with fresh context for each prompt
+Harmony chat batch processing with browser tool support
+Based on chat.py but processes multiple prompt files sequentially
 """
 
 import argparse
@@ -50,102 +50,105 @@ def create_system_message(args, browser_tool=None):
 
 
 async def process_single_prompt(generator, encoding, prompt_text, args, browser_tool=None):
-    """Process a single prompt with fresh context"""
+    """Process a single prompt with fresh context - exactly like chat.py"""
     print(f"\n{'='*60}")
     print(f"Processing prompt: {prompt_text[:100]}{'...' if len(prompt_text) > 100 else ''}")
     print(f"{'='*60}")
     
-    # Create fresh message list for each prompt
-    system_message = create_system_message(args, browser_tool)
-    user_message = Message.from_role_and_content(Role.USER, prompt_text)
-    messages = [system_message, user_message]
-    
-    while True:
-        last_message = messages[-1]
+    try:
+        # Create fresh message list for each prompt
+        system_message = create_system_message(args, browser_tool)
+        user_message = Message.from_role_and_content(Role.USER, prompt_text)
+        messages = [system_message, user_message]
         
-        # Handle tool calls
-        if last_message.recipient and last_message.recipient.startswith("browser."):
-            if not browser_tool:
-                raise ValueError("Browser tool is not enabled")
+        while True:
+            last_message = messages[-1]
             
-            print("\n[Browser tool executing...]")
-            
-            async def run_tool():
-                results = []
-                async for msg in browser_tool.process(last_message):
-                    results.append(msg)
-                return results
-            
-            result = await run_tool()
-            messages += result
-            
-            if not args.show_browser_results:
-                print("[Browser results processed]")
-            else:
-                print(f"Browser output: {result[0].content[0].text}")
-            
-            continue
-        
-        # Generate assistant response
-        conversation = Conversation.from_messages(messages)
-        tokens = encoding.render_conversation_for_completion(conversation, Role.ASSISTANT)
-        
-        parser = StreamableParser(encoding, role=Role.ASSISTANT)
-        current_output_text = ""
-        output_text_delta_buffer = ""
-        
-        print("\nAssistant Response:")
-        print("-" * 40)
-        
-        for predicted_token in generator.generate(
-            tokens, 
-            encoding.stop_tokens_for_assistant_actions(),
-            temperature=args.temperature,
-            max_tokens=args.max_tokens if args.max_tokens > 0 else None
-        ):
-            parser.process(predicted_token)
-            
-            if not parser.last_content_delta:
+            # Handle tool calls
+            if last_message.recipient and last_message.recipient.startswith("browser."):
+                if not browser_tool:
+                    raise ValueError("Browser tool is not enabled")
+                
+                print("\n[Browser tool executing...]")
+                
+                async def run_tool():
+                    results = []
+                    async for msg in browser_tool.process(last_message):
+                        results.append(msg)
+                    return results
+                
+                result = await run_tool()
+                messages += result
+                
+                if not args.show_browser_results:
+                    print("[Browser results processed]")
+                else:
+                    print(f"Browser output: {result[0].content[0].text}")
+                
                 continue
             
-            should_send_output_text_delta = True
-            output_text_delta_buffer += parser.last_content_delta
+            # Generate assistant response - EXACTLY like chat.py
+            conversation = Conversation.from_messages(messages)
+            tokens = encoding.render_conversation_for_completion(conversation, Role.ASSISTANT)
             
-            # Handle browser tool citation normalization
-            if browser_tool:
-                updated_output_text, _annotations, has_partial_citations = browser_tool.normalize_citations(
-                    current_output_text + output_text_delta_buffer
-                )
-                output_text_delta_buffer = updated_output_text[len(current_output_text):]
-                if has_partial_citations:
-                    should_send_output_text_delta = False
+            parser = StreamableParser(encoding, role=Role.ASSISTANT)
+            current_output_text = ""
+            output_text_delta_buffer = ""
             
-            if should_send_output_text_delta:
-                print(output_text_delta_buffer, end="", flush=True)
-                current_output_text += output_text_delta_buffer
-                output_text_delta_buffer = ""
+            print("\nAssistant Response:")
+            print("-" * 40)
+            
+            # Use EXACTLY the same call as chat.py - no extra parameters!
+            for predicted_token in generator.generate(tokens, encoding.stop_tokens_for_assistant_actions()):
+                parser.process(predicted_token)
+                
+                if not parser.last_content_delta:
+                    continue
+                
+                should_send_output_text_delta = True
+                output_text_delta_buffer += parser.last_content_delta
+                
+                # Handle browser tool citation normalization
+                if browser_tool:
+                    updated_output_text, _annotations, has_partial_citations = browser_tool.normalize_citations(
+                        current_output_text + output_text_delta_buffer
+                    )
+                    output_text_delta_buffer = updated_output_text[len(current_output_text):]
+                    if has_partial_citations:
+                        should_send_output_text_delta = False
+                
+                if should_send_output_text_delta:
+                    print(output_text_delta_buffer, end="", flush=True)
+                    current_output_text += output_text_delta_buffer
+                    output_text_delta_buffer = ""
+            
+            messages += parser.messages
+            
+            # Check if we need to continue with tool calls
+            if messages[-1].recipient:
+                continue
+            else:
+                # Assistant response complete
+                break
         
-        messages += parser.messages
+        print("\n" + "-" * 40)
+        print("Response complete\n")
         
-        # Check if we need to continue with tool calls
-        if messages[-1].recipient:
-            continue
-        else:
-            # Assistant response complete
-            break
-    
-    print("\n" + "-" * 40)
-    print("Response complete\n")
+    except Exception as e:
+        print(f"\nError in process_single_prompt: {e}")
+        import traceback
+        traceback.print_exc()
+        raise e
 
 
 async def main(args):
-    # Initialize model backend
+    # Initialize model backend - EXACTLY like chat.py
     match args.backend:
         case "triton":
             from gpt_oss.triton.model import TokenGenerator as TritonGenerator
             from gpt_oss.torch.utils import init_distributed
             device = init_distributed()
-            generator = TritonGenerator(args.checkpoint, args.context_length, device)
+            generator = TritonGenerator(args.checkpoint, args.context, device)
         case "torch":
             from gpt_oss.torch.model import TokenGenerator as TorchGenerator
             from gpt_oss.torch.utils import init_distributed
@@ -153,13 +156,13 @@ async def main(args):
             generator = TorchGenerator(args.checkpoint, device)
         case "vllm":
             from gpt_oss.vllm.token_generator import TokenGenerator as VLLMGenerator
-            generator = VLLMGenerator(args.checkpoint, tensor_parallel_size=args.tensor_parallel_size)
+            generator = VLLMGenerator(args.checkpoint, tensor_parallel_size=2)
         case _:
             raise ValueError(f"Invalid backend: {args.backend}")
 
     encoding = load_harmony_encoding(HarmonyEncodingName.HARMONY_GPT_OSS)
 
-    # Initialize browser tool if enabled
+    # Initialize browser tool if enabled - EXACTLY like chat.py
     browser_tool = None
     if args.browser:
         backend = ExaBackend(source="web")
@@ -168,6 +171,8 @@ async def main(args):
 
     # Process prompt files
     prompt_files = ["prompt1.txt", "prompt2.txt", "prompt3.txt"]
+    
+    results = {}
     
     for prompt_file in prompt_files:
         if not os.path.exists(prompt_file):
@@ -183,17 +188,25 @@ async def main(args):
                 continue
             
             await process_single_prompt(generator, encoding, prompt_text, args, browser_tool)
+            results[prompt_file] = "SUCCESS"
             
         except Exception as e:
             print(f"Error processing {prompt_file}: {e}")
+            results[prompt_file] = f"ERROR: {e}"
             continue
 
+    print(f"\n{'='*60}")
+    print("SUMMARY")
+    print(f"{'='*60}")
+    for filename, result in results.items():
+        print(f"{filename}: {result}")
+    
     print("All prompts processed!")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Batch generation with browser tool support",
+        description="Batch generation with browser tool support (based on chat.py)",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
@@ -225,19 +238,12 @@ if __name__ == "__main__":
         help="Show detailed browser results",
     )
     parser.add_argument(
-        "-t",
-        "--temperature",
-        metavar="TEMP",
-        type=float,
-        default=0.0,
-        help="Sampling temperature",
-    )
-    parser.add_argument(
-        "--max-tokens",
-        metavar="LIMIT",
+        "-c",
+        "--context",
+        metavar="CONTEXT",
         type=int,
-        default=0,
-        help="Maximum tokens to generate (0 for unlimited)",
+        default=8192,
+        help="Max context length",
     )
     parser.add_argument(
         "--backend",
@@ -245,18 +251,6 @@ if __name__ == "__main__":
         default="triton",
         choices=["triton", "torch", "vllm"],
         help="Inference backend",
-    )
-    parser.add_argument(
-        "--tensor-parallel-size",
-        type=int,
-        default=2,
-        help="Tensor parallel size for vLLM backend",
-    )
-    parser.add_argument(
-        "--context-length",
-        type=int,
-        default=4096,
-        help="Context length for Triton backend",
     )
     
     args = parser.parse_args()
