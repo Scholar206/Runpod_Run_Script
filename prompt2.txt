@@ -1,0 +1,7 @@
+"""# PROMPT 2: INTERNE RECHERCHE (EINFACH)
+    
+Führe eine interne Recherche durch und beantworte:
+- Welche Sprache wird in Deutschland hauptsächlich gesprochen?  
+
+## AUSGABEFORMAT
+Nur die Sprache nennen.

@@ -1,0 +1,5 @@
+Führe eine interne Recherche durch und beantworte:
+- Was ist die Hauptstadt von Deutschland?  
+
+## AUSGABEFORMAT
+Schreibe nur den Stadtnamen, sonst nichts.

@@ -1,0 +1,4 @@
+ """# PROMPT 3: INTERNE RECHERCHE (KURZ)
+    
+Führe eine interne Recherche durch und beantworte:
+- Nenne die ungefähre Einwohnerzahl von Darmstadt.  
